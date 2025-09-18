@@ -29,12 +29,12 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        <Sidebar >
-          <main className="min-h-dvh  px-5 md:px-8 py-8 space-y-8 overflow-x-hidden">
+        <Sidebar>
+          <main className="min-h-dvh px-5 md:px-8 py-8 space-y-8 overflow-x-hidden">
             {children}
           </main>
         </Sidebar>
       </body>
-    </html>
+    </html >
   );
 }

@@ -8,39 +8,90 @@ export default function Hero() {
     <section
       id="home"
       className={[
-        "relative isolate overflow-hidden rounded-2xl p-6 md:p-8",
+        "relative isolate overflow-hidden rounded-2xl",
+        "p-5 md:p-8",
         "border border-obsidianGray/80 bg-transparent",
-        
       ].join(" ")}
       aria-label="Apresentação Rickson"
     >
+      {/* Glow de fundo */}
       <div
         aria-hidden
-        className="pointer-events-none absolute -inset-32 -z-10 rounded-[inherit] blur-3xl neon-glow animate-neon"
+        className="pointer-events-none absolute -inset-28 md:-inset-32 -z-10 rounded-[inherit] blur-2xl md:blur-3xl neon-glow animate-neon"
       />
 
-      {/* conteúdo */}
-      <div className="relative z-10 grid items-center gap-8 md:grid-cols-[1.25fr_0.75fr]">
-        {/* Texto */}
-        <div className="space-y-5">
-          <h1 className="text-4xl md:text-5xl font-semibold leading-tight tracking-tight">
+      {/* Conteúdo */}
+      <div
+        className={[
+          "relative z-10 grid items-center gap-6 content-start",
+          // 1 coluna no mobile, 2 no md+
+          "md:grid-cols-[1.25fr_0.75fr]",
+          "justify-items-center md:justify-items-stretch",
+        ].join(" ")}
+      >
+        {/* Card (Imagem) — primeiro no mobile, à direita no desktop */}
+        <div
+          className={[
+            "order-[-1] md:order-2", // <- chave: imagem vai pra direita no md+
+            "relative mx-auto md:mx-0",
+            "w-full max-w-[260px] sm:max-w-[320px]",
+            "md:w-[58%] lg:w-[52%]",
+            "md:justify-self-end",
+          ].join(" ")}
+        >
+          <div
+            className={[
+              "relative overflow-hidden rounded-2xl",
+              "aspect-square", // sempre quadrada
+              "border border-obsidianGray/70",
+            ].join(" ")}
+          >
+            <div
+              aria-hidden
+              className={[
+                "absolute z-0 rounded-[inherit]",
+                "-inset-6 blur-xl md:-inset-10 md:blur-2xl",
+                "neon-glow-sm animate-neon",
+              ].join(" ")}
+            />
+
+            <Image
+              src="/hero-image.png"
+              alt="Foto/arte do Rickson"
+              fill
+              priority
+              sizes="(min-width: 1024px) 35vw, (min-width: 768px) 42vw, 85vw"
+              className="relative z-10 object-cover"
+            />
+          </div>
+        </div>
+
+        {/* Texto — fica à esquerda no desktop */}
+        <div
+          className={[
+            "w-full max-w-[680px] space-y-4 md:space-y-5 text-center md:text-left",
+            "md:order-1", // <- texto vem antes no md+, então fica na esquerda
+          ].join(" ")}
+        >
+          <h1 className="text-3xl sm:text-4xl md:text-5xl font-semibold leading-tight tracking-tight">
             Olá, eu sou o <span className="text-phoenixGold">Rickson</span>
           </h1>
 
-          <p className="md:text-lg text-polarWhite/80">
+          <p className="text-base sm:text-lg text-polarWhite/80">
             Transformo ideias em produtos digitais robustos — do design de
             interface ao backend.
           </p>
 
-          <div className="flex flex-wrap gap-3">
+          <div className="flex flex-col sm:flex-row sm:flex-wrap gap-3 sm:justify-center md:justify-start">
             <Link
               href="#projects"
               className={[
-                "inline-flex items-center gap-2 rounded-lg px-4 py-2 font-medium",
+                "inline-flex items-center justify-center gap-2 rounded-lg px-4 py-2 font-medium",
+                "w-full sm:w-auto",
                 "bg-phoenixGold text-midnightBlack",
                 "shadow-[0_0_0_0_rgba(0,0,0,0.0)] hover:shadow-[0_8px_24px_-10px_rgba(238,187,70,0.55)]",
                 "active:translate-y-[1px]",
-                "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-0 focus-visible:ring-[color:var(--color-ring)]"
+                "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-0 focus-visible:ring-[color:var(--color-ring)]",
               ].join(" ")}
             >
               Ver projetos
@@ -57,42 +108,22 @@ export default function Hero() {
             <Link
               href="#contact"
               className={[
-                "inline-flex items-center gap-2 rounded-lg px-4 py-2 font-medium",
+                "inline-flex items-center justify-center gap-2 rounded-lg px-4 py-2 font-medium",
+                "w-full sm:w-auto",
                 "border border-obsidianGray/80 text-polarWhite/95",
                 "bg-[linear-gradient(180deg,rgba(255,255,255,0.06),rgba(255,255,255,0)_35%)]",
                 "hover:border-polarWhite/25 hover:bg-white/5",
                 "active:translate-y-[1px]",
-                "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-0 focus-visible:ring-ring)]"
+                "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-0 focus-visible:ring-[color:var(--color-ring)]",
               ].join(" ")}
             >
               Fale comigo
             </Link>
           </div>
         </div>
-
-        {/* Card */}
-        <div className="relative md:justify-self-end w-3/4 sm:w-2/3 md:w-[72%] lg:w-[62%]">
-          <div
-            className={[
-              "relative aspect-square overflow-hidden rounded-2xl",
-              "border border-obsidianGray/70",
-            ].join(" ")}
-          >
-            <div
-              aria-hidden
-              className="absolute -inset-10 z-0 rounded-[inherit] neon-glow-sm animate-neon"
-            />
-
-            <Image
-              src="/hero-image.png"
-              alt="Foto/arte do Rickson"
-              fill
-              className="relative z-10 object-cover"
-              priority
-            />
-          </div>
-        </div>
       </div>
+
+      {/* Ticker */}
       <SocialTicker />
     </section>
   );
