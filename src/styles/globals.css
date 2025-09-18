@@ -32,7 +32,6 @@
   --color-deepAmber: #d1a13a;
   --color-polarWhite: #ffffff;
 
-  /* Mapeamento para utilitários Tailwind v4 (bg-appBg, text-appText, bg-brand etc.) */
   --color-appBg: var(--app-bg);
   --color-appText: var(--app-text);
   --color-line: var(--line);
@@ -42,11 +41,8 @@
   --color-accent: var(--color-deepAmber);
   --color-accentFg: var(--color-midnightBlack);
 
-  /* primo do teu slateBlue, elegante e versátil */
   --color-azureSoft: color-mix(in oklab, var(--color-slateBlue) 40%, #3aa7ff);
-  /* versão mais profunda para sombra/glow */
   --color-azureDeep: #1e6adb;
-  /* highlight da borda/anel (um tom acima) */
   --color-azureEdge: #79c6ff;
 }
 
@@ -66,7 +62,6 @@
     --app-text: var(--color-midnightBlack);
     --line: var(--color-slateBlue);
 
-    /* ring fora do namespace color */
     --ring: var(--color-phoenixGold);
   }
 }
@@ -82,6 +77,7 @@ body {
 }
 
 @layer utilities {
+  /* ======= Neon ======= */
   @keyframes neonPulse {
     0% {
       opacity: 0.55;
@@ -121,6 +117,7 @@ body {
     mix-blend-mode: screen;
   }
 
+  /* ======= Glass ======= */
   .glass-card {
     background: rgba(255, 255, 255, 0.04);
     backdrop-filter: blur(14px) saturate(120%);
@@ -132,15 +129,34 @@ body {
       0 0 0 1px rgba(255, 255, 255, 0.03);
   }
 
-  @keyframes tickerX {
-    0% {
+  /* ======= Ticker (loop perfeito + não estica o pai) ======= */
+  @keyframes ticker-scroll {
+    from {
       transform: translateX(0);
     }
-    100% {
+    to {
       transform: translateX(-50%);
     }
   }
+
   .ticker {
+    --gap: 1.5rem;
+    --speed: 10s;
+    position: relative;
+    width: 100%;
+    mask-image: linear-gradient(
+      90deg,
+      transparent,
+      #000 12%,
+      #000 88%,
+      transparent
+    );
+  }
+
+  .ticker-viewport {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
     mask-image: linear-gradient(
       to right,
       transparent,
@@ -156,26 +172,29 @@ body {
       transparent
     );
   }
-  .ticker-run {
-    min-width: max-content;
-    animation: ticker-scroll 20s linear infinite;
+
+  .ticker-track {
+    display: flex;
+    gap: 1.5rem;
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    display: inline-flex;
+    white-space: nowrap;
+    will-change: transform;
+    transform: translate3d(0, 0, 0);
+    animation: ticker-scroll var(--speed) linear infinite;
   }
 
-  .tick er-content {
-    width: 200%;
-  }
-
-  @keyframes ticker-scroll {
-    from {
-      transform: translateX(0);
-    }
-    to {
-      transform: translateX(-50%);
-    }
+  .ticker-copy {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--gap);
   }
 
   @media (prefers-reduced-motion: reduce) {
-    .ticker-run {
+    .ticker-track {
       animation: none !important;
     }
   }

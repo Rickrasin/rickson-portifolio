@@ -2,7 +2,6 @@
 import Image from "next/image";
 import Link from "next/link";
 import SocialTicker from "@/components/ui/SocialTicker";
-import { STACKS } from "@/lib/data";
 
 export default function Hero() {
   return (
@@ -10,14 +9,11 @@ export default function Hero() {
       id="home"
       className={[
         "relative isolate overflow-hidden rounded-2xl p-6 md:p-8",
-        // fundo com grid + leve gradiente
         "border border-obsidianGray/80 bg-transparent",
-        "bg-[radial-gradient(1200px_600px_at_70%_-10%,color-mix(in_oklab,var(--color-slateBlue)_22%,transparent),transparent_70%)]",
-        "before:bg-grid before:mask-grid before:absolute before:inset-0 before:-z-10 before:rounded-[inherit]"
+        
       ].join(" ")}
       aria-label="Apresentação Rickson"
     >
-      {/* aura neon grande (atrás de tudo) */}
       <div
         aria-hidden
         className="pointer-events-none absolute -inset-32 -z-10 rounded-[inherit] blur-3xl neon-glow animate-neon"
@@ -66,7 +62,7 @@ export default function Hero() {
                 "bg-[linear-gradient(180deg,rgba(255,255,255,0.06),rgba(255,255,255,0)_35%)]",
                 "hover:border-polarWhite/25 hover:bg-white/5",
                 "active:translate-y-[1px]",
-                "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-0 focus-visible:ring-[color:var(--color-ring)]"
+                "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-0 focus-visible:ring-ring)]"
               ].join(" ")}
             >
               Fale comigo
@@ -79,15 +75,9 @@ export default function Hero() {
           <div
             className={[
               "relative aspect-square overflow-hidden rounded-2xl",
-              // vidro + borda dupla (stroke fora + dentro)
-              "glass-card border border-obsidianGray/70",
-              "before:absolute before:inset-px before:rounded-[inherit] before:border before:border-white/5",
-              // brilho suave no topo
-              "after:pointer-events-none after:absolute after:inset-0 after:rounded-[inherit]",
-              "after:bg-[linear-gradient(180deg,rgba(255,255,255,0.12),rgba(255,255,255,0)_35%)]"
+              "border border-obsidianGray/70",
             ].join(" ")}
           >
-            {/* glow pequeno por trás do card */}
             <div
               aria-hidden
               className="absolute -inset-10 z-0 rounded-[inherit] neon-glow-sm animate-neon"

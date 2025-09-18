@@ -7,9 +7,11 @@ export type NavItem = {
 };
 
 export type SocialItem = {
-  label: string;
-  href: string;
   icon: ElementType;
+  platform?: string;
+  label?: string;
+  href: string;
+  handle?: string;
 };
 
 export type SocialTicker = {

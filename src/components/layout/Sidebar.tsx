@@ -13,9 +13,9 @@ export default function Sidebar({ children }: SidebarLayoutProps) {
   return (
     <div className="min-h-dvh flex bg-appBg text-appText">
       <LeftSidebar />
-      <div className="mx-32 ">
+      <main className="ml-32 mr-32">
         {children}
-      </div>
+      </main>
       <RightSidebar />
     </div>
   );

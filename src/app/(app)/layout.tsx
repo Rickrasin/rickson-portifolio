@@ -30,7 +30,9 @@ export default function RootLayout({
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
         <Sidebar >
-          {children}
+          <main className="min-h-dvh  px-5 md:px-8 py-8 space-y-8 overflow-x-hidden">
+            {children}
+          </main>
         </Sidebar>
       </body>
     </html>
