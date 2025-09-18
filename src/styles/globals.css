@@ -41,6 +41,13 @@
   --color-brandFg: var(--color-midnightBlack);
   --color-accent: var(--color-deepAmber);
   --color-accentFg: var(--color-midnightBlack);
+
+  /* primo do teu slateBlue, elegante e versátil */
+  --color-azureSoft: color-mix(in oklab, var(--color-slateBlue) 40%, #3aa7ff);
+  /* versão mais profunda para sombra/glow */
+  --color-azureDeep: #1e6adb;
+  /* highlight da borda/anel (um tom acima) */
+  --color-azureEdge: #79c6ff;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -75,72 +82,101 @@ body {
 }
 
 @layer utilities {
-  /* vidro/transparência */
-  .glass {
-    @apply bg-white/5 backdrop-blur-md border border-white/10;
-    /* leve “inner shadow” pra dar profundidade */
-    box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.06);
-  }
-
-  /* borda interna suave (fica lindo em dark) */
-  .inner-border {
-    position: relative;
-  }
-  .inner-border::after {
-    content: "";
-    position: absolute;
-    inset: 0;
-    border-radius: inherit;
-    pointer-events: none;
-    padding: 1px; /* espessura */
-    background: linear-gradient(
-      180deg,
-      rgba(255, 255, 255, 0.12),
-      rgba(255, 255, 255, 0)
-    );
-    -webkit-mask: linear-gradient(#000 0 0) content-box,
-      linear-gradient(#000 0 0);
-    -webkit-mask-composite: xor;
-    mask-composite: exclude;
-  }
-
-  /* pulso azul (fica por trás do card) */
-  @keyframes bluePulse {
+  @keyframes neonPulse {
     0% {
-      opacity: 0.22;
-      transform: scale(0.98);
+      opacity: 0.55;
     }
     50% {
-      opacity: 0.45;
-      transform: scale(1.02);
+      opacity: 0.95;
     }
     100% {
-      opacity: 0.22;
-      transform: scale(0.98);
+      opacity: 0.55;
     }
   }
-  
-  .animate-bluePulse {
-    animation: bluePulse 4s ease-in-out infinite;
+  .animate-neon {
+    animation: neonPulse 4s ease-in-out infinite;
   }
 
-  /* glow radial que segue o mouse (usa --x/--y) */
-  .mouse-glow::before {
-    content: "";
-    position: absolute;
-    inset: -1px;
-    border-radius: inherit;
-    pointer-events: none;
+  .neon-glow {
     background: radial-gradient(
-      120px 120px at var(--x, 70%) var(--y, 0%),
-      rgba(56, 132, 255, 0.28),
-      transparent 60%
-    );
-    filter: blur(20px);
-    transition: opacity 0.25s ease;
-    opacity: 0.7;
+        60% 50% at 60% 20%,
+        color-mix(in oklab, var(--color-azureSoft) 70%, transparent),
+        transparent 70%
+      ),
+      radial-gradient(
+        50% 42% at 20% 85%,
+        color-mix(in oklab, var(--color-azureDeep) 55%, transparent),
+        transparent 70%
+      );
+    filter: blur(40px);
+    mix-blend-mode: screen;
   }
-  .mouse-glow:hover::before {
-    opacity: 1;
+  .neon-glow-sm {
+    background: radial-gradient(
+      52% 42% at 58% 22%,
+      color-mix(in oklab, var(--color-azureSoft) 55%, transparent),
+      transparent 70%
+    );
+    filter: blur(32px);
+    mix-blend-mode: screen;
+  }
+
+  .glass-card {
+    background: rgba(255, 255, 255, 0.04);
+    backdrop-filter: blur(14px) saturate(120%);
+    -webkit-backdrop-filter: blur(14px) saturate(120%);
+    border: 1px solid
+      color-mix(in oklab, var(--color-obsidianGray) 75%, transparent);
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.06),
+      inset 0 -12px 24px rgba(0, 0, 0, 0.18),
+      0 0 0 1px rgba(255, 255, 255, 0.03);
+  }
+
+  @keyframes tickerX {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(-50%);
+    }
+  }
+  .ticker {
+    mask-image: linear-gradient(
+      to right,
+      transparent,
+      #000 12%,
+      #000 88%,
+      transparent
+    );
+    -webkit-mask-image: linear-gradient(
+      to right,
+      transparent,
+      #000 12%,
+      #000 88%,
+      transparent
+    );
+  }
+  .ticker-run {
+    min-width: max-content;
+    animation: ticker-scroll 20s linear infinite;
+  }
+
+  .tick er-content {
+    width: 200%;
+  }
+
+  @keyframes ticker-scroll {
+    from {
+      transform: translateX(0);
+    }
+    to {
+      transform: translateX(-50%);
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .ticker-run {
+      animation: none !important;
+    }
   }
 }
