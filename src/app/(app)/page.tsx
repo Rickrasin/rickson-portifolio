@@ -1,4 +1,4 @@
-import Hero from "@/components/section/Hero";
+import HeroSection from "@/components/section/HeroSection";
 import Experience from "@/components/section/Experience";
 import Stacks from "@/components/section/Stacks";
 import Services from "@/components/section/Services";
@@ -8,7 +8,7 @@ import Contact from "@/components/section/Contact";
 export default function Home() {
   return (
     <>
-      <Hero />
+      <HeroSection />
       <Experience />
       <Stacks />
       <Services />

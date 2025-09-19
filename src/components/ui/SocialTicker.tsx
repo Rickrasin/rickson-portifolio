@@ -6,7 +6,7 @@ export default function SocialTicker() {
   return (
     <div
       className={[
-        "ticker group mt-4 w-full rounded-xl border border-obsidianGray/70",
+        "ticker group w-full rounded-xl border border-obsidianGray/70",
         "bg-midnightBlack/50 px-3 md:px-4 backdrop-blur-lg",
         "shadow-[inset_0_1px_0_rgba(255,255,255,0.04)]",
       ].join(" ")}

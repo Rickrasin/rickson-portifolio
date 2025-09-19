@@ -13,7 +13,7 @@ export default function Sidebar({ children }: SidebarLayoutProps) {
     <div className="min-h-dvh bg-appBg text-appText">
       <Header />
 
-      <div className="flex">
+      <div className="flex justify-center">
         <div className="hidden md:block">
           <LeftSidebar />
         </div>

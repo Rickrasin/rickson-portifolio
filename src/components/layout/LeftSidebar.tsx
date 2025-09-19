@@ -8,7 +8,7 @@ import SquareIconButton from "../ui/buttons/SquareIconButton";
 const LeftSidebar = () => {
   const pathname = usePathname();
   return (
-    <Sidebar >
+    <Sidebar side="right" ariaLabel="Primary">
       <div className="fixed flex flex-col h-full justify-between">
         <Logo src="/logo.svg" alt="Rickson" size={64} />
 

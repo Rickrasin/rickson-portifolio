@@ -1,6 +1,17 @@
+// components/layout/header/Drawer.tsx
 "use client";
 import * as React from "react";
 import { createPortal } from "react-dom";
+
+type Breakpoint = "sm" | "md" | "lg" | "xl" | "2xl";
+
+const HIDE_ABOVE: Record<Breakpoint, string> = {
+    sm: "sm:hidden",
+    md: "md:hidden",
+    lg: "lg:hidden",
+    xl: "xl:hidden",
+    "2xl": "2xl:hidden",
+};
 
 type DrawerProps = {
     open: boolean;
@@ -8,6 +19,13 @@ type DrawerProps = {
     side?: "left" | "right";
     nav: React.ReactNode;      // centro (navegação)
     footer?: React.ReactNode;  // rodapé (redes)
+    /** Oculta o Drawer (e o overlay) a partir do breakpoint informado. Default: "md".
+     *  Passe false para nunca ocultar responsivamente. */
+    hideAbove?: Breakpoint | false;
+    /** Opcional: id para associar com aria-controls no botão */
+    id?: string;
+    /** Opcional: rótulo acessível */
+    ariaLabel?: string;
 };
 
 export default function Drawer({
@@ -16,6 +34,9 @@ export default function Drawer({
     side = "left",
     nav,
     footer,
+    hideAbove = "md",
+    id = "mobile-drawer",
+    ariaLabel = "Menu",
 }: DrawerProps) {
     React.useEffect(() => {
         if (!open) return;
@@ -33,21 +54,26 @@ export default function Drawer({
 
     if (!open) return null;
 
+    const responsiveHide = hideAbove ? HIDE_ABOVE[hideAbove] : "";
+
     return createPortal(
         <>
             <div
-                className="fixed inset-0"
+                className={["fixed inset-0 bg-black/50", responsiveHide].join(" ")}
                 onClick={onClose}
                 aria-hidden="true"
             />
             <aside
+                id={id}
                 className={[
+                    responsiveHide, // ex.: "md:hidden"
                     "fixed inset-y-0 z-[9999] h-dvh w-[60%] max-w-80",
                     "bg-midnightBlack border-line shadow-xl",
                     side === "right" ? "right-0 border-l" : "left-0 border-r",
                 ].join(" ")}
                 role="dialog"
                 aria-modal="true"
+                aria-label={ariaLabel}
             >
                 <div className="h-full flex flex-col">
                     <div className="px-4 pt-6" />
