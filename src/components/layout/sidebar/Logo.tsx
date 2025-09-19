@@ -8,7 +8,7 @@ type LogoProps = {
     size?: number;
 };
 
-const Logo = ({ href = "/logo.svg", src, alt = "Logo", size = 64 }: LogoProps) => {
+const Logo = ({ href = "/", src, alt = "Logo", size = 64 }: LogoProps) => {
     return (
         <div className="flex w-full gap-3">
             <Link

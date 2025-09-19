@@ -1,4 +1,3 @@
-// components/layout/header/Drawer.tsx
 "use client";
 import * as React from "react";
 import { createPortal } from "react-dom";
@@ -17,14 +16,10 @@ type DrawerProps = {
     open: boolean;
     onClose: () => void;
     side?: "left" | "right";
-    nav: React.ReactNode;      // centro (navegação)
-    footer?: React.ReactNode;  // rodapé (redes)
-    /** Oculta o Drawer (e o overlay) a partir do breakpoint informado. Default: "md".
-     *  Passe false para nunca ocultar responsivamente. */
+    nav: React.ReactNode;
+    footer?: React.ReactNode;
     hideAbove?: Breakpoint | false;
-    /** Opcional: id para associar com aria-controls no botão */
     id?: string;
-    /** Opcional: rótulo acessível */
     ariaLabel?: string;
 };
 

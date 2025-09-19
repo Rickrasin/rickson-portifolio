@@ -39,8 +39,8 @@ export default function HeroImage({ image }: Props) {
                     sizes={[
                         "(min-width: 1536px) 36vw",
                         "(min-width: 1280px) 40vw",
-                        "(min-width: 1024px) 46vw", // 2 colunas no lg+
-                        "(min-width: 768px) 70vw",  // md ainda 1 coluna
+                        "(min-width: 1024px) 46vw",
+                        "(min-width: 768px) 70vw",
                         "88vw",
                     ].join(", ")}
                     className="relative z-10 object-cover"

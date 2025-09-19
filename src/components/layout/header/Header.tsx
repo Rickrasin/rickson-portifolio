@@ -6,15 +6,14 @@ import SquareIconButton from "@/components/ui/buttons/SquareIconButton";
 import IconButton from "@/components/ui/buttons/IconButton";
 import Drawer from "@/components/layout/header/Drawer";
 import { IoMenu, IoCloseSharp } from "react-icons/io5";
-import Logo from "../sidebar/Logo";
+import Logo from "@/components/layout/sidebar/Logo";
 
-const MD_BP = 768; 
+const MD_BP = 768;
 
 export default function Header({ logo = "/logo.svg" }: { logo?: string }) {
     const [open, setOpen] = React.useState(false);
     const pathname = usePathname();
 
-    // fecha ao navegar
     React.useEffect(() => setOpen(false), [pathname]);
 
     React.useEffect(() => {
@@ -22,7 +21,6 @@ export default function Header({ logo = "/logo.svg" }: { logo?: string }) {
             if (window.innerWidth >= MD_BP) setOpen(false);
         };
         window.addEventListener("resize", onResize);
-        onResize(); // garante estado correto no mount
         return () => window.removeEventListener("resize", onResize);
     }, []);
 
