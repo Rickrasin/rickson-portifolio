@@ -32,6 +32,7 @@
   --color-polarWhite: #ffffff;
 
   --color-appBg: var(--app-bg);
+  --color-appBgSecondary: var(--app-bgSecondary);
   --color-appText: var(--app-text);
   --color-appSecondaryText: var(--app-text);
   --color-line: var(--line);
@@ -56,6 +57,7 @@
 @media (prefers-color-scheme: dark) {
   :root {
     --app-bg: var(--color-midnightBlack);
+    --app-bgSecondary: var(--color-graphiteBlack);
     --app-text: var(--color-polarWhite);
     --app-textSecondary: var(--color-slateBlue);
     --line: var(--color-obsidianGray);
@@ -67,7 +69,7 @@
 @media (prefers-color-scheme: light) {
   :root {
     --app-bg: var(--color-polarWhite);
-
+    --app-bgSecondary: var(--color-graphiteBlack);
     --app-text: var(--color-midnightBlack);
     --app-textSecondary: var(--color-slateBlue);
     --line: var(--color-slateBlue);

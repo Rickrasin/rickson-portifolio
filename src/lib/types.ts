@@ -18,6 +18,15 @@ export type SocialTicker = {
   icon: ElementType;
   platform: string;
   href: string;
-  handle: string; // o que aparece no ticker (ex.: @seuuser ou /in/seuuser)
-  label?: string; // opcional, caso queira um texto diferente
+  handle: string;
+  label?: string;
+};
+
+export type Project = {
+  title: string;
+  description: string;
+  liveURL?: string;
+  repoURL?: string;
+  thumb?: string;
+  tags?: string[];
 };

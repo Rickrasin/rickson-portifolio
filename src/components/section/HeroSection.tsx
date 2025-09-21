@@ -1,21 +1,13 @@
 "use client";
 import SocialTicker from "@/components/ui/SocialTicker";
-import HeroImage from "@/components/layout/HeroImage/HeroImage";
+import HeroImage from "@/components/layout/HeroImage/Image";
 import { Button } from "@/components/ui/buttons/Button";
 import { BsArrowRight } from "react-icons/bs";
+import Card from "@/components/ui/CardSection/CardSection";
 
 export default function HeroSection() {
   return (
-    <section
-      id="home"
-      className={[
-        "flex flex-col gap-8",
-        "relative isolate overflow-hidden rounded-2xl",
-        "p-5 lg:p-8",
-        "border border-obsidianGray/80 bg-transparent"
-      ].join(" ")}
-      aria-label="Apresentação Rickson"
-    >
+    <Card id="hero" ariaLabel="Apresentação Rickson">
       <div
         aria-hidden
         className="pointer-events-none absolute -inset-28 lg:-inset-32 -z-10 rounded-[inherit] blur-2xl lg:blur-3xl neon-glow animate-neon"
@@ -66,6 +58,6 @@ export default function HeroSection() {
       </div>
 
       <SocialTicker />
-    </section>
+    </Card>
   );
 }

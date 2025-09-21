@@ -20,8 +20,9 @@ function cn(...classes: Array<string | false | null | undefined>) {
 }
 
 const baseClasses = [
+  "enabled:cursor-pointer",
   "inline-flex items-center justify-center gap-2",
-  "rounded-lg px-4 py-2 font-medium min-h-11",
+  "rounded-lg px-4 py-2 font-medium",
   "transition-[box-shadow,transform,background,border-color]",
   "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2",
   "disabled:opacity-50 disabled:cursor-not-allowed"
@@ -96,7 +97,6 @@ export function Button({
     baseClasses,
     variants[variant],
     fullWidth && "w-full",
-    // impedir clique/hover quando desabilitado
     disabled && "pointer-events-none",
     className
   );

@@ -4,7 +4,7 @@ import { usePathname } from "next/navigation";
 import { NAV, SOCIALS } from "@/lib/data";
 import SquareIconButton from "@/components/ui/buttons/SquareIconButton";
 import IconButton from "@/components/ui/buttons/IconButton";
-import Drawer from "@/components/layout/header/Drawer";
+import Drawer from "@/components/layout/Header/Drawer";
 import { IoMenu, IoCloseSharp } from "react-icons/io5";
 import Logo from "@/components/layout/sidebar/Logo";
 
