@@ -71,6 +71,13 @@ export const PROJECTS: Project[] = [
     description: "Website institucional responsivo.",
     repoURL: "/projetos/projeto-3",
     tags: ["Acessibilidade", "Design System"]
+  },
+  {
+    title: "Projeto 4",
+    description: "Website institucional responsivo.",
+    repoURL: "/projetos/projeto-4",
+    liveURL: "/projetos/projeto-4",
+    tags: ["Acessibilidade", "Design System"]
   }
 ];
 

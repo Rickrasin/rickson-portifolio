@@ -7,13 +7,13 @@ export default function SocialTicker() {
     <div
       className={[
         "ticker group w-full rounded-xl border border-obsidianGray/70",
-        "bg-midnightBlack/50 px-3 md:px-4 backdrop-blur-lg",
-        "shadow-[inset_0_1px_0_rgba(255,255,255,0.04)]",
+        "bg-appBg/50 backdrop-blur-lg",
+        "shadow-[inset_0_1px_0_rgba(255,255,255,0.04)]"
       ].join(" ")}
       style={
         {
           ["--speed" as string]: "30s",
-          ["--gap" as string]: "1.25rem",
+          ["--gap" as string]: "1.25rem"
         } as React.CSSProperties
       }
       aria-label="Links de redes sociais"
@@ -32,7 +32,7 @@ export default function SocialTicker() {
 
 function TickerCopy({
   items,
-  ariaHidden = false,
+  ariaHidden = false
 }: {
   items: SocialItem[];
   ariaHidden?: boolean;
@@ -51,10 +51,10 @@ function TickerCopy({
             rel="noreferrer"
             className={[
               "flex items-center gap-2 rounded-full px-2.5 md:px-3",
-              "py-1.5 text-polarWhite/90 transition duration-300",
-              "hover:text-phoenixGold",
+              "py-1.5 text-appText/90 transition duration-300",
+              " hover:text-phoenixGold",
               "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-0 focus-visible:ring-[color:var(--ring)]",
-              "active:translate-y-[0.5px]",
+              "active:translate-y-[0.5px]"
             ].join(" ")}
             title={it.label ?? it.handle}
           >

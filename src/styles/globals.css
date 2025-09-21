@@ -129,6 +129,76 @@ body {
     mix-blend-mode: screen;
   }
 
+  /* ===== Projects: neon central atrás da section ===== */
+
+  /* Pulse do halo da seção Projects */
+  @keyframes neonProjectsPulse {
+    0% {
+      opacity: 0.72;
+      transform: translate(-50%, -50%) scale(0.985);
+      filter: blur(42px);
+    }
+    50% {
+      opacity: 0.95;
+      transform: translate(-50%, -50%) scale(1.015);
+      filter: blur(52px);
+    }
+    100% {
+      opacity: 0.72;
+      transform: translate(-50%, -50%) scale(0.985);
+      filter: blur(42px);
+    }
+  }
+
+  .neon-projects {
+    position: relative;
+    z-index: 0;
+    isolation: isolate;
+  }
+
+  .neon-projects::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: min(1200px, 140%);
+    height: min(900px, 120%);
+    border-radius: 9999px;
+    pointer-events: none;
+    z-index: -1;
+    will-change: transform, opacity, filter;
+    animation: neonProjectsPulse 4.5s ease-in-out infinite;
+
+    background: radial-gradient(
+        45% 45% at 50% 35%,
+        color-mix(in oklab, var(--color-azureSoft) 70%, transparent),
+        transparent 70%
+      ),
+      radial-gradient(
+        40% 40% at 70% 70%,
+        color-mix(in oklab, var(--color-azureDeep) 55%, transparent),
+        transparent 72%
+      ),
+      radial-gradient(
+        50% 50% at 30% 80%,
+        color-mix(in oklab, var(--color-azureEdge) 35%, transparent),
+        transparent 72%
+      );
+    filter: blur(42px);
+    opacity: 0.85;
+    mix-blend-mode: screen;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .neon-projects::before {
+      animation: none;
+      transform: translate(-50%, -50%) scale(1);
+      filter: blur(46px);
+      opacity: 0.9;
+    }
+  }
+
   /* ======= Glass ======= */
   .glass-card {
     background: rgba(255, 255, 255, 0.04);
