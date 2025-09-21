@@ -1,5 +1,5 @@
 import React from "react";
-import { NAV } from "@/lib/data";
+import { NAV } from "@/lib/data/data";
 import { usePathname } from "next/navigation";
 import Sidebar from "@/components/layout/sidebar/Sidebar";
 import Logo from "@/components/layout/sidebar/Logo";

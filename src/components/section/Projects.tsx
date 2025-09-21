@@ -1,7 +1,7 @@
 "use client";
 import CardOutlineSection from "@/components/ui/CardSection/CardOutlineSection";
 import ProjectCard from "../layout/Project/ProjectCard";
-import { PROJECTS } from "@/lib/data";
+import { PROJECTS } from "@/lib/data/data";
 import { Button } from "@/components/ui/buttons/Button";
 import { MdArrowForward } from "react-icons/md";
 
@@ -14,8 +14,8 @@ type ProjectsSectionProps = {
   title?: string;
   subtitle?: string;
   className?: string;
-  maxVisible?: number; // quantos mostrar aqui (default 6)
-  moreHref?: string; // link da aba de projetos (default "/projects")
+  maxVisible?: number;
+  moreHref?: string;
 };
 
 export default function ProjectsSection({

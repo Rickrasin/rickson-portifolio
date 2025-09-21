@@ -1,10 +1,10 @@
 import HeroSection from "@/components/section/HeroSection";
 import Experience from "@/components/section/Experience";
-import Stacks from "@/components/section/Stacks";
+import Stacks from "@/components/section/StackSection";
 import Services from "@/components/section/Services";
 import Projects from "@/components/section/Projects";
 import Contact from "@/components/section/Contact";
-import { PROJECTS } from "@/lib/data";
+import { PROJECTS } from "@/lib/data/data";
 
 export default function Home() {
   return (

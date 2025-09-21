@@ -15,9 +15,7 @@ const CardOutlineSection = ({
     <section
       id={id}
       aria-label={ariaLabel}
-      className={[
-        "relative isolate rounded-2xl p-4 sm:p-5 md:p-6 neon-projects"
-      ].join(" ")}
+      className={["relative neon-projects "].join(" ")}
     >
       {children}
     </section>

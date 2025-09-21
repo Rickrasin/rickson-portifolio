@@ -1,5 +1,5 @@
 "use client";
-import { SOCIAL_TICKER } from "@/lib/data";
+import { SOCIAL_TICKER } from "@/lib/data/data";
 import { SocialItem } from "@/lib/types";
 
 export default function SocialTicker() {

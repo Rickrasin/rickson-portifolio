@@ -1,5 +1,5 @@
 import React from "react";
-import { SOCIALS } from "@/lib/data";
+import { SOCIALS } from "@/lib/data/data";
 import SquareIconButton from "../ui/buttons/SquareIconButton";
 import Sidebar from "@/components/layout/sidebar/Sidebar";
 

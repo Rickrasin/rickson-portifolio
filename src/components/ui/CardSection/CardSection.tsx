@@ -20,7 +20,7 @@ const CardSection = ({ children, id, ariaLabel }: SidebarLayoutProps) => {
     >
       <div
         aria-hidden
-        className="pointer-events-none absolute -inset-28 lg:-inset-32 -z-10 rounded-[inherit] blur-2xl lg:blur-3xl neon-glow animate-neon"
+        className="pointer-events-none absolute -inset-28 lg:-inset-32  rounded-[inherit] blur-2xl lg:blur-3xl neon-glow animate-neon"
       />
 
       {children}

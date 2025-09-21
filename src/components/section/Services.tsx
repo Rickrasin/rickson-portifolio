@@ -1,4 +1,4 @@
-import { SERVICES } from "@/lib/data";
+import { SERVICES } from "@/lib/data/data";
 
 export default function Services() {
   return (

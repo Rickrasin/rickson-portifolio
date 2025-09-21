@@ -150,12 +150,13 @@ body {
     }
   }
 
+  /* Fora do @layer (ou garanta que venha depois das utilities) */
   .neon-projects {
     position: relative;
-    z-index: 0;
-    isolation: isolate;
+    isolation: isolate; /* mantém o blend “contido” */
   }
 
+  /* Tira o z-index negativo */
   .neon-projects::before {
     content: "";
     position: absolute;
@@ -166,7 +167,6 @@ body {
     height: min(900px, 120%);
     border-radius: 9999px;
     pointer-events: none;
-    z-index: -1;
     will-change: transform, opacity, filter;
     animation: neonProjectsPulse 4.5s ease-in-out infinite;
 
@@ -188,6 +188,13 @@ body {
     filter: blur(42px);
     opacity: 0.85;
     mix-blend-mode: screen;
+    z-index: 0; /* <- chave do conserto */
+  }
+
+  /* Suba o conteúdo acima do halo */
+  .neon-projects > .neon-content {
+    position: relative;
+    z-index: 1;
   }
 
   @media (prefers-reduced-motion: reduce) {
