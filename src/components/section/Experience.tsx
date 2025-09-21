@@ -42,7 +42,6 @@ export default function Experience({ projects, maxVisible = 3 }: Props) {
         <div
           className={[
             "grid grid-cols-1",
-            // até 3 cards: 1 col no mobile, 2 no lg, 3 no xl+
             "lg:grid-cols-2 xl:grid-cols-3",
             "gap-3 sm:gap-4 md:gap-5 xl:gap-6"
           ].join(" ")}

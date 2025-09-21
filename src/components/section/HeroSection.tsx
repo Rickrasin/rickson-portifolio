@@ -2,7 +2,7 @@
 import SocialTicker from "@/components/ui/SocialTicker";
 import HeroImage from "@/components/layout/HeroImage/Image";
 import { Button } from "@/components/ui/buttons/Button";
-import { BsArrowRight } from "react-icons/bs";
+import { MdArrowForward } from "react-icons/md";
 import Card from "@/components/ui/CardSection/CardSection";
 
 export default function HeroSection() {
@@ -16,7 +16,7 @@ export default function HeroSection() {
       <div
         className={[
           "relative z-10 grid items-center content-start gap-6",
-          "lg:grid-cols-[1.25fr_0.75fr]", // 2 colunas só no lg+
+          "lg:grid-cols-[1.25fr_0.75fr]",
           "justify-items-center lg:justify-items-stretch"
         ].join(" ")}
       >
@@ -42,7 +42,7 @@ export default function HeroSection() {
               href="#projects"
               variant="primary"
               className="w-full sm:w-auto"
-              rightIcon={<BsArrowRight />}
+              rightIcon={<MdArrowForward />}
             >
               Ver projetos
             </Button>

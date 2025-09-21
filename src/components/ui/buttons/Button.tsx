@@ -22,6 +22,7 @@ function cn(...classes: Array<string | false | null | undefined>) {
 const baseClasses = [
   "enabled:cursor-pointer",
   "inline-flex items-center justify-center gap-2",
+  "text-sm",
   "rounded-lg px-4 py-2 font-medium",
   "transition-[box-shadow,transform,background,border-color]",
   "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2",

@@ -2,6 +2,8 @@
 import CardOutlineSection from "@/components/ui/CardSection/CardOutlineSection";
 import ProjectCard from "../layout/Project/ProjectCard";
 import { PROJECTS } from "@/lib/data";
+import { Button } from "@/components/ui/buttons/Button";
+import { MdArrowForward } from "react-icons/md";
 
 function cn(...c: Array<string | false | null | undefined>) {
   return c.filter(Boolean).join(" ");
@@ -11,15 +13,21 @@ type ProjectsSectionProps = {
   id?: string;
   title?: string;
   subtitle?: string;
-  featuredEvery?: number; // 0 = desativa destaque
   className?: string;
+  maxVisible?: number; // quantos mostrar aqui (default 6)
+  moreHref?: string; // link da aba de projetos (default "/projects")
 };
 
 export default function ProjectsSection({
   id = "projects",
   title = "Projetos",
-  subtitle
+  subtitle,
+  maxVisible = 6,
+  moreHref = "/projects"
 }: ProjectsSectionProps) {
+  const hasMore = PROJECTS.length > maxVisible;
+  const items = hasMore ? PROJECTS.slice(0, maxVisible) : PROJECTS;
+
   return (
     <CardOutlineSection id={id} ariaLabel="Seção de Projetos">
       {/* Cabeçalho */}
@@ -37,22 +45,35 @@ export default function ProjectsSection({
         ) : null}
       </div>
 
-      {/* Grid de cards (sem Card wrapper) */}
+      {/* Grid */}
       <div
         className={cn(
           "grid grid-cols-1",
           "lg:grid-cols-3",
           "xl:grid-cols-3",
-          "2xl:grid-cols-4",
+          "2xl:grid-cols-3",
           "gap-3 sm:gap-4 md:gap-5 xl:gap-6"
         )}
       >
-        {PROJECTS.map((p, id) => (
-          <div key={id} className="h-full">
+        {items.map((p, idx) => (
+          <div key={`${p.title}-${idx}`} className="h-full">
             <ProjectCard {...p} />
           </div>
         ))}
       </div>
+
+      {/* Botão "ver todos" (só se tiver mais que maxVisible) */}
+      {hasMore && (
+        <div className="mt-4 sm:mt-6 flex justify-center">
+          <Button
+            href={moreHref}
+            rightIcon={<MdArrowForward />}
+            variant="primary"
+          >
+            Ver todos os projetos
+          </Button>
+        </div>
+      )}
     </CardOutlineSection>
   );
 }
