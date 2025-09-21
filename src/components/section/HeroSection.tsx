@@ -12,7 +12,7 @@ export default function HeroSection() {
         "flex flex-col gap-8",
         "relative isolate overflow-hidden rounded-2xl",
         "p-5 lg:p-8",
-        "border border-obsidianGray/80 bg-transparent",
+        "border border-obsidianGray/80 bg-transparent"
       ].join(" ")}
       aria-label="Apresentação Rickson"
     >
@@ -24,8 +24,8 @@ export default function HeroSection() {
       <div
         className={[
           "relative z-10 grid items-center content-start gap-6",
-          "lg:grid-cols-[1.25fr_0.75fr]",          // 2 colunas só no lg+
-          "justify-items-center lg:justify-items-stretch",
+          "lg:grid-cols-[1.25fr_0.75fr]", // 2 colunas só no lg+
+          "justify-items-center lg:justify-items-stretch"
         ].join(" ")}
       >
         <HeroImage image="/hero-image.png" />
@@ -33,15 +33,16 @@ export default function HeroSection() {
         <div
           className={[
             "w-full max-w-[680px] space-y-4 lg:space-y-5 text-center lg:text-left",
-            "lg:order-1",
+            "lg:order-1"
           ].join(" ")}
         >
-          <h1 className="text-3xl sm:text-4xl lg:text-5xl font-semibold leading-tight tracking-tight">
+          <h1 className="text-3xl sm:text-4xl lg:text-5xl font-semibold leading-tight text-appText tracking-tight">
             Olá, eu sou o <span className="text-phoenixGold">Rickson</span>
           </h1>
 
-          <p className="text-base sm:text-lg text-polarWhite/80">
-            Transformo ideias em produtos digitais robustos — do design de interface ao backend.
+          <p className="text-base sm:text-lg text-appText/80">
+            Transformo ideias em produtos digitais robustos — do design de
+            interface ao backend.
           </p>
 
           <div className="flex flex-col sm:flex-row sm:flex-wrap gap-3 sm:justify-center lg:justify-start">
@@ -53,7 +54,11 @@ export default function HeroSection() {
             >
               Ver projetos
             </Button>
-            <Button href="#contact" variant="secondary" className="w-full sm:w-auto">
+            <Button
+              href="#contact"
+              variant="secondary"
+              className="w-full sm:w-auto"
+            >
               Fale comigo
             </Button>
           </div>

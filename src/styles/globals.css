@@ -33,6 +33,7 @@
 
   --color-appBg: var(--app-bg);
   --color-appText: var(--app-text);
+  --color-appSecondaryText: var(--app-text);
   --color-line: var(--line);
 
   --color-brand: var(--color-phoenixGold);
@@ -56,6 +57,7 @@
   :root {
     --app-bg: var(--color-midnightBlack);
     --app-text: var(--color-polarWhite);
+    --app-textSecondary: var(--color-slateBlue);
     --line: var(--color-obsidianGray);
 
     --ring: var(--color-phoenixGold);
@@ -65,7 +67,9 @@
 @media (prefers-color-scheme: light) {
   :root {
     --app-bg: var(--color-polarWhite);
+
     --app-text: var(--color-midnightBlack);
+    --app-textSecondary: var(--color-slateBlue);
     --line: var(--color-slateBlue);
 
     --ring: var(--color-phoenixGold);

@@ -14,7 +14,7 @@ export default function Home() {
       <Services />
       <Projects />
       <Contact />
-      <footer className="pb-12 text-center text-xs text-[#A7B1B8]">
+      <footer className="pb-12 text-center text-xs">
         © {new Date().getFullYear()} Rickson Dev — feito com Next.js
       </footer>
     </>
