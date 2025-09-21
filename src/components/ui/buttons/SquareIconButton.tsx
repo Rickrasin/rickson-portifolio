@@ -40,7 +40,7 @@ export default function SquareIconButton({
 
     const iconEl = (
         <>
-            <Icon className="size-5 transition-transform transform-gpu group-hover:scale-105 group-focus-visible:scale-105 motion-reduce:transform-none" />
+            <Icon className="size-5 transition-transform transform-gpu group-hover:size-12 group-focus-visible:size-12 motion-reduce:transform-none" />
             {label ? <span className="sr-only">{label}</span> : null}
         </>
     );
