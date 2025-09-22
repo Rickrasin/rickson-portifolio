@@ -1,6 +1,6 @@
 "use client";
 import CardOutlineSection from "@/components/ui/CardSection/CardOutlineSection";
-import ProjectCard from "../../layout/Project/ProjectCard";
+import ProjectCard from "@/components/layout/Project/ProjectCard";
 import { PROJECTS } from "@/lib/data/data";
 import { Button } from "@/components/ui/Buttons/Button";
 import { MdArrowForward } from "react-icons/md";

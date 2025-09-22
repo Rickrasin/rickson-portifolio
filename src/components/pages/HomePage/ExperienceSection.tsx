@@ -2,7 +2,7 @@
 import { Project } from "@/lib/types";
 import ProjectCard from "@/components/layout/Project/ProjectCard";
 import EmptyCard from "@/components/layout/Project/EmptyCard";
-import Card from "../../ui/CardSection/CardSection";
+import Card from "@/components/ui/CardSection/CardSection";
 
 type Props = {
   projects: Project[];
