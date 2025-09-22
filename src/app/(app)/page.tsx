@@ -4,14 +4,14 @@ import Stacks from "@/components/section/StackSection";
 import Services from "@/components/section/Services";
 import Projects from "@/components/section/Projects";
 import Contact from "@/components/section/Contact";
-import { PROJECTS } from "@/lib/data/data";
+import { PROJECTS, STACKS, FEATURED_STACK_IDS } from "@/lib/data/data";
 
 export default function Home() {
   return (
     <>
       <HeroSection />
       <Experience projects={PROJECTS} />
-      <Stacks />
+      <Stacks stacks={STACKS} featuredIds={FEATURED_STACK_IDS} />
       <Services />
       <Projects />
       <Contact />

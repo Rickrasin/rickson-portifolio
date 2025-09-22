@@ -3,7 +3,7 @@ import {
   FiTool,
   FiFolderMinus,
   FiMail,
-  FiTwitter
+  FiTwitter,
 } from "react-icons/fi";
 
 import {
@@ -22,7 +22,7 @@ import {
   SiGit,
   SiGithub,
   SiFigma,
-  SiPython
+  SiPython,
 } from "react-icons/si";
 
 import { TbLetterZ } from "react-icons/tb";
@@ -36,7 +36,7 @@ export const NAV: NavItem[] = [
   { label: "Home", href: "/", icon: FiHome },
   { label: "Services", href: "/services", icon: FiTool },
   { label: "Projects", href: "/projects", icon: FiFolderMinus },
-  { label: "Contact", href: "/contact", icon: FiMail }
+  { label: "Contact", href: "/contact", icon: FiMail },
 ];
 
 export const SOCIALS: SocialItem[] = [
@@ -44,25 +44,25 @@ export const SOCIALS: SocialItem[] = [
   {
     label: "Linkedin",
     icon: FaLinkedin,
-    href: "https://linkedin.com/seu-usuario"
+    href: "https://linkedin.com/seu-usuario",
   },
   {
     label: "Twitter",
     icon: FiTwitter,
-    href: "https://twitter.com/seu-usuario"
-  }
+    href: "https://twitter.com/seu-usuario",
+  },
 ];
 
 export const SERVICES = [
   { title: "Landing Pages", desc: "Páginas rápidas focadas em conversão" },
   {
     title: "Sites Institucionais",
-    desc: "Sites modernos, responsivos e fáceis de editar"
+    desc: "Sites modernos, responsivos e fáceis de editar",
   },
   {
     title: "Web Apps",
-    desc: "Sistemas sob medida (ex.: delivery, dashboards)"
-  }
+    desc: "Sistemas sob medida (ex.: delivery, dashboards)",
+  },
 ];
 
 export const PROJECTS: Project[] = [
@@ -70,28 +70,28 @@ export const PROJECTS: Project[] = [
     title: "Projeto 1",
     description: "Landing page com foco em conversão e performance.",
     repoURL: "/projetos/projeto-1",
-    tags: ["Next.js", "Tailwind", "SEO"]
+    tags: ["Next.js", "Tailwind", "SEO"],
     // thumb: "/images/projeto-1.jpg"
   },
   {
     title: "Projeto 2",
     description: "Painel web com autenticação e gráficos.",
     repoURL: "/projetos/projeto-2",
-    tags: ["React", "Charts", "Auth"]
+    tags: ["React", "Charts", "Auth"],
   },
   {
     title: "Projeto 3",
     description: "Website institucional responsivo.",
     repoURL: "/projetos/projeto-3",
-    tags: ["Acessibilidade", "Design System"]
+    tags: ["Acessibilidade", "Design System"],
   },
   {
     title: "Projeto 4",
     description: "Website institucional responsivo.",
     repoURL: "/projetos/projeto-4",
     liveURL: "/projetos/projeto-4",
-    tags: ["Acessibilidade", "Design System"]
-  }
+    tags: ["Acessibilidade", "Design System"],
+  },
 ];
 
 export const SOCIAL_TICKER: SocialItem[] = [
@@ -99,26 +99,26 @@ export const SOCIAL_TICKER: SocialItem[] = [
     icon: FaGithub,
     platform: "github",
     href: "https://github.com/Rickrasin",
-    handle: "@Rickrasin"
+    handle: "@Rickrasin",
   },
   {
     icon: FaLinkedin,
     platform: "linkedin",
     href: "https://www.linkedin.com/in/ricksondev/",
-    handle: "/in/ricksondev/"
+    handle: "/in/ricksondev/",
   },
   {
     icon: FaXTwitter,
     platform: "x",
     href: "https://x.com/Rickrasin",
-    handle: "@Rickrasin"
+    handle: "@Rickrasin",
   },
   {
     icon: FaDiscord,
     platform: "Discord",
     href: "https://discordapp.com/users/274550730931699712",
-    handle: "@rickras"
-  }
+    handle: "@rickras",
+  },
 ];
 
 export const STACKS: StackItem[] = [
@@ -127,28 +127,28 @@ export const STACKS: StackItem[] = [
     id: "ts",
     slug: "typescript",
     label: "TypeScript",
-    category: "Linguagem",
+    category: "Language",
     icon: SiTypescript,
     site: "https://www.typescriptlang.org/",
-    color: "#3178C6"
+    color: "#3178C6",
   },
   {
     id: "js",
     slug: "javascript",
     label: "JavaScript",
-    category: "Linguagem",
+    category: "Language",
     icon: SiJavascript,
     site: "https://developer.mozilla.org/",
-    color: "#F7DF1E"
+    color: "#F7DF1E",
   },
   {
     id: "py",
     slug: "python",
     label: "Python",
-    category: "Linguagem",
+    category: "Language",
     icon: SiPython,
     site: "https://www.python.org/",
-    color: "#3776AB"
+    color: "#3776AB",
   },
 
   // Frameworks
@@ -159,7 +159,7 @@ export const STACKS: StackItem[] = [
     category: "Framework",
     icon: SiReact,
     site: "https://react.dev/",
-    color: "#61DAFB"
+    color: "#61DAFB",
   },
   {
     id: "next",
@@ -168,7 +168,7 @@ export const STACKS: StackItem[] = [
     category: "Framework",
     icon: SiNextdotjs,
     site: "https://nextjs.org/",
-    color: "#FFF"
+    color: "#FFF",
   },
   {
     id: "tw",
@@ -177,65 +177,65 @@ export const STACKS: StackItem[] = [
     category: "Framework",
     icon: SiTailwindcss,
     site: "https://tailwindcss.com/",
-    color: "#06B6D4"
+    color: "#06B6D4",
   },
 
-  // Libs
+  // Librarys
   {
     id: "redux",
     slug: "redux",
     label: "Redux",
-    category: "Lib",
+    category: "Library",
     icon: SiRedux,
     site: "https://redux.js.org/",
-    color: "#764ABC"
+    color: "#764ABC",
   },
   {
     id: "rhf",
     slug: "react-hook-form",
     label: "React Hook Form",
-    category: "Lib",
+    category: "Library",
     icon: RiFileList3Line,
     site: "https://react-hook-form.com/",
-    color: "#EC5990" // cor de marca do RHF
+    color: "#EC5990", // cor de marca do RHF
   },
   {
     id: "zod",
     slug: "zod",
     label: "Zod",
-    category: "Lib",
+    category: "Library",
     icon: TbLetterZ,
     site: "https://zod.dev/",
-    color: "#3E67B1" // azul do logo/site do Zod
+    color: "#3E67B1", // azul do logo/site do Zod
   },
 
-  // Banco
+  // Database
   {
     id: "mongo",
     slug: "mongodb",
     label: "MongoDB",
-    category: "Banco",
+    category: "Database",
     icon: SiMongodb,
     site: "https://www.mongodb.com/",
-    color: "#47A248"
+    color: "#47A248",
   },
   {
     id: "mysql",
     slug: "mysql",
     label: "MySQL",
-    category: "Banco",
+    category: "Database",
     icon: SiMysql,
     site: "https://www.mysql.com/",
-    color: "#4479A1"
+    color: "#4479A1",
   },
   {
     id: "pg",
     slug: "postgresql",
     label: "PostgreSQL",
-    category: "Banco",
+    category: "Database",
     icon: SiPostgresql,
     site: "https://www.postgresql.org/",
-    color: "#4169E1"
+    color: "#4169E1",
   },
 
   // Cloud
@@ -246,7 +246,7 @@ export const STACKS: StackItem[] = [
     category: "Cloud",
     icon: SiVercel,
     site: "https://vercel.com/",
-    color: "#FFF"
+    color: "#FFF",
   },
   {
     id: "netlify",
@@ -255,7 +255,7 @@ export const STACKS: StackItem[] = [
     category: "Cloud",
     icon: SiNetlify,
     site: "https://www.netlify.com/",
-    color: "#00C7B7"
+    color: "#00C7B7",
   },
 
   // Runtime
@@ -266,7 +266,7 @@ export const STACKS: StackItem[] = [
     category: "Runtime",
     icon: SiNodedotjs,
     site: "https://nodejs.org/",
-    color: "#5FA04E"
+    color: "#5FA04E",
   },
 
   // DevTools
@@ -277,7 +277,7 @@ export const STACKS: StackItem[] = [
     category: "DevTool",
     icon: SiGit,
     site: "https://git-scm.com/",
-    color: "#F05032"
+    color: "#F05032",
   },
   {
     id: "github",
@@ -286,7 +286,7 @@ export const STACKS: StackItem[] = [
     category: "DevTool",
     icon: SiGithub,
     site: "https://github.com/",
-    color: "#181717"
+    color: "#181717",
   },
 
   // Design
@@ -297,8 +297,8 @@ export const STACKS: StackItem[] = [
     category: "Design",
     icon: SiFigma,
     site: "https://www.figma.com/",
-    color: "#F24E1E"
-  }
+    color: "#F24E1E",
+  },
 ];
 
 export const FEATURED_STACK_IDS = [
@@ -313,5 +313,5 @@ export const FEATURED_STACK_IDS = [
   "zod",
   "rhf",
   "git",
-  "figma"
+  "figma",
 ] as const;

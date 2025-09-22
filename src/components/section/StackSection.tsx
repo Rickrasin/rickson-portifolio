@@ -1,8 +1,7 @@
-"use client";
 import CardOutlineSection from "@/components/ui/CardSection/CardOutlineSection";
-import { STACKS, FEATURED_STACK_IDS } from "@/lib/data/data";
-import { Button } from "@/components/ui/buttons/Button";
 import StackTile from "@/components/ui/Stack/StackTile";
+import { Button } from "@/components/ui/buttons/Button";
+import { StackItem } from "@/lib/types";
 
 type StacksSectionProps = {
   id?: string;
@@ -10,7 +9,8 @@ type StacksSectionProps = {
   subtitle?: string;
   maxVisible?: number;
   moreHref?: string;
-  featuredIds?: string[];
+  stacks: StackItem[];
+  featuredIds?: string[] | undefined | unknown;
 };
 
 export default function StacksSection({
@@ -19,11 +19,21 @@ export default function StacksSection({
   subtitle,
   maxVisible = 12,
   moreHref = "/stacks",
-  featuredIds = FEATURED_STACK_IDS as unknown as string[]
+  stacks,
+  featuredIds
 }: StacksSectionProps) {
-  const featuredAll = STACKS.filter((s) => featuredIds.includes(s.id));
-  const items = featuredAll.slice(0, maxVisible);
-  const hasMore = featuredAll.length > maxVisible;
+  const featuredSet =
+    Array.isArray(featuredIds) && featuredIds.length > 0
+      ? new Set<string>(featuredIds.map(String))
+      : null;
+
+  const filtered = featuredSet
+    ? stacks.filter((s) => featuredSet.has(s.id))
+    : stacks;
+
+  const items = filtered.slice(0, Math.max(0, maxVisible));
+  const hasMore = filtered.length > maxVisible;
+  const isFilteredButEmpty = featuredSet && filtered.length === 0;
 
   return (
     <CardOutlineSection id={id} ariaLabel="Seção de Stacks">
@@ -41,28 +51,34 @@ export default function StacksSection({
         )}
       </div>
 
-      <ul
-        className={[
-          "grid",
-          "grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4",
-          "",
-          "gap-3 md:gap-4"
-        ].join(" ")}
-      >
-        {items.map((s) => (
-          <li key={s.id} className="min-h-0">
-            <StackTile
-              icon={s.icon}
-              label={s.label}
-              site={s.site}
-              color={s.color}
-              iconSize={20}
-            />
-          </li>
-        ))}
-      </ul>
+      {isFilteredButEmpty ? (
+        <div className="rounded-lg border border-obsidianGray/60 bg-appBg/40 p-4 text-textApp/80">
+          Nenhuma stack encontrada para os IDs selecionados.
+        </div>
+      ) : (
+        <ul
+          className={[
+            "grid",
+            "grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4",
+            "gap-3 md:gap-4"
+          ].join(" ")}
+        >
+          {items.map((s) => (
+            <li key={s.id} className="min-h-0">
+              <StackTile
+                icon={s.icon}
+                label={s.label}
+                category={s.category}
+                site={s.site}
+                color={s.color}
+                iconSize={20}
+              />
+            </li>
+          ))}
+        </ul>
+      )}
 
-      {/* CTA opcional */}
+      {/* CTA */}
       {hasMore && (
         <div className="mt-6 text-center">
           <Button href={moreHref} variant="primary">

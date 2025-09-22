@@ -34,7 +34,7 @@
   --color-appBg: var(--app-bg);
   --color-appBgSecondary: var(--app-bgSecondary);
   --color-appText: var(--app-text);
-  --color-appSecondaryText: var(--app-text);
+  --color-appSecondaryText: var(--app-textSecondary);
   --color-line: var(--line);
 
   --color-brand: var(--color-phoenixGold);

@@ -1,5 +1,3 @@
-"use client";
-import * as React from "react";
 import type { IconType } from "react-icons";
 import Link from "next/link";
 import { MdArrowOutward } from "react-icons/md";
@@ -8,7 +6,8 @@ export type StackTileProps = {
   icon: IconType;
   label: string;
   site: string;
-  color?: `#${string}` | string;
+  color?: string | string;
+  category: string;
   className?: string;
   iconSize?: number;
 };
@@ -21,6 +20,7 @@ export default function StackTile({
   icon: Icon,
   label,
   site,
+  category,
   color = "#A7B1B8",
   className,
   iconSize = 20
@@ -32,8 +32,7 @@ export default function StackTile({
       rel="noopener noreferrer"
       className={cn(
         "group flex items-center justify-between rounded-lg border px-3 py-2 text-sm",
-        "bg-appBg/40 border-obsidianGray/60",
-        "hover:bg-graphiteBlack/60 transition-colors",
+        "hover:bg-graphiteBlack/60 transition-colors duration-300",
         className
       )}
       style={{ borderColor: color }}
@@ -49,9 +48,12 @@ export default function StackTile({
         >
           <Icon size={iconSize} style={{ color }} className="shrink-0" />
         </div>
-        <span className="text-[#D9E1E7]">{label}</span>
+        <div className="flex flex-col">
+          <span className={``} style={{ color }}>{label}</span>
+          <span className={`text-xs text-appText/80`} >{category}</span>
+        </div>
       </div>
       <MdArrowOutward />
-    </Link>
+    </Link >
   );
 }

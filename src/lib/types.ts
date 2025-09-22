@@ -25,10 +25,10 @@ export type Project = {
 };
 
 export type StackCategory =
-  | "Linguagem"
+  | "Language"
   | "Framework"
-  | "Lib"
-  | "Banco"
+  | "Library"
+  | "Database"
   | "Cloud"
   | "Runtime"
   | "DevTool"
@@ -38,15 +38,7 @@ export type StackItem = {
   id: string;
   slug: string;
   label: string;
-  category:
-    | "Linguagem"
-    | "Framework"
-    | "Lib"
-    | "Banco"
-    | "Cloud"
-    | "Runtime"
-    | "DevTool"
-    | "Design";
+  category: StackCategory;
   icon: IconType;
   site: string; // link oficial
   color: string; // cor principal da marca
