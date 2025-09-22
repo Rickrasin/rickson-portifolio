@@ -2,7 +2,7 @@
 import * as React from "react";
 import LeftSidebar from "@/components/layout/Sidebar/LeftSidebar";
 import RightSidebar from "@/components/layout/Sidebar/RightSidebar";
-import Header from "@/components/layout/asdas/Header";
+import Header from "@/components/layout/Header/Header";
 
 type SidebarLayoutProps = {
   children: React.ReactNode;
