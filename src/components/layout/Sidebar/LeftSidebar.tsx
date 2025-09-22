@@ -3,7 +3,7 @@ import { NAV } from "@/lib/data";
 import { usePathname } from "next/navigation";
 import Sidebar from "@/components/layout/Sidebar/SidePanel";
 import Logo from "@/components/ui/Logo";
-import SquareIconButton from "@/components/ui/Buttons/SquareIconButton";
+import SquareIconButton from "@/components/ui/asdas/SquareIconButton";
 
 const LeftSidebar = () => {
   const pathname = usePathname();
