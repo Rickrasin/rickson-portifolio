@@ -1,7 +1,7 @@
 "use client";
 import * as React from "react";
 import { usePathname } from "next/navigation";
-import { NAV, SOCIALS } from "@/lib/data/data";
+import { NAV, SOCIALS } from "@/lib/data";
 import SquareIconButton from "@/components/ui/Buttons/SquareIconButton";
 import IconButton from "@/components/ui/Buttons/IconButton";
 import Drawer from "@/components/layout/Header/Drawer";

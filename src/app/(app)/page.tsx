@@ -4,7 +4,7 @@ import Stacks from "@/components/pages/HomePage/StackSection";
 import Services from "@/components/pages/HomePage/ServicesSection";
 import Projects from "@/components/pages/HomePage/ProjectsSection";
 import Contact from "@/components/pages/HomePage/ContactSection";
-import { PROJECTS, STACKS, FEATURED_STACK_IDS } from "@/lib/data/data";
+import { PROJECTS, STACKS, FEATURED_STACK_IDS } from "@/lib/data";
 
 export default function Home() {
   return (

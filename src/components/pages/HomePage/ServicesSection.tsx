@@ -1,4 +1,4 @@
-import { SERVICES } from "@/lib/data/data";
+import { SERVICES } from "@/lib/data";
 
 export default function ServicesSection() {
   return (

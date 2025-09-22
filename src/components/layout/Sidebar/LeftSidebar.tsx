@@ -1,5 +1,5 @@
 import React from "react";
-import { NAV } from "@/lib/data/data";
+import { NAV } from "@/lib/data";
 import { usePathname } from "next/navigation";
 import Sidebar from "@/components/layout/Sidebar/SidePanel";
 import Logo from "@/components/ui/Logo";
@@ -11,7 +11,6 @@ const LeftSidebar = () => {
     <Sidebar side="right" ariaLabel="Primary">
       <div className="fixed flex flex-col h-full justify-between">
         <Logo src="/logo.svg" alt="Rickson" size={64} />
-
         <nav className=" flex flex-col items-center justify-center  gap-4 md:gap-8 ">
           {NAV.map((item) => {
             const active = pathname === item.href;
