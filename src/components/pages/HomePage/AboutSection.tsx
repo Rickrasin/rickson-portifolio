@@ -1,4 +1,4 @@
-export default function About() {
+export default function AboutSection() {
   return (
     <div className="rounded-2xl bg-[#1D2F3B] border border-[#2B383F] p-6">
       <h3 className="text-lg font-semibold">Quem sou eu</h3>

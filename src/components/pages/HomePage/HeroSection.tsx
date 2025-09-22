@@ -1,7 +1,7 @@
 "use client";
 import SocialTicker from "@/components/ui/SocialTicker";
-import HeroImage from "@/components/layout/HeroImage/Image";
-import { Button } from "@/components/ui/buttons/Button";
+import HeroImage from "@/components/ui/HeroImage/Image";
+import { Button } from "@/components/ui/Buttons/Button";
 import { MdArrowForward } from "react-icons/md";
 import Card from "@/components/ui/CardSection/CardSection";
 

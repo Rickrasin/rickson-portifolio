@@ -1,6 +1,6 @@
 import { SERVICES } from "@/lib/data/data";
 
-export default function Services() {
+export default function ServicesSection() {
   return (
     <section id="services" className="space-y-4">
       <div className="flex items-center justify-between">

@@ -1,11 +1,11 @@
 import React from "react";
 import { SOCIALS } from "@/lib/data/data";
-import SquareIconButton from "../ui/buttons/SquareIconButton";
-import Sidebar from "@/components/layout/sidebar/Sidebar";
+import SquareIconButton from "@/components/ui/Buttons/SquareIconButton";
+import Sidebar from "@/components/layout/Sidebar/SidePanel";
 
 const RightSidebar = () => {
     return (
-        <Sidebar side="left" ariaLabel="Secondary" >
+        <Sidebar side="left" ariaLabel="secondary" >
             <div className="fixed h-full flex flex-col justify-center">
                 <div className="flex flex-col items-center gap-8">
                     {SOCIALS.map((item) => (

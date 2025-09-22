@@ -1,9 +1,9 @@
 import React from "react";
 import { NAV } from "@/lib/data/data";
 import { usePathname } from "next/navigation";
-import Sidebar from "@/components/layout/sidebar/Sidebar";
-import Logo from "@/components/layout/sidebar/Logo";
-import SquareIconButton from "../ui/buttons/SquareIconButton";
+import Sidebar from "@/components/layout/Sidebar/SidePanel";
+import Logo from "@/components/ui/Logo";
+import SquareIconButton from "@/components/ui/Buttons/SquareIconButton";
 
 const LeftSidebar = () => {
   const pathname = usePathname();
@@ -12,7 +12,7 @@ const LeftSidebar = () => {
       <div className="fixed flex flex-col h-full justify-between">
         <Logo src="/logo.svg" alt="Rickson" size={64} />
 
-        <nav className="flex flex-col items-center justify-center  gap-4 md:gap-8 ">
+        <nav className=" flex flex-col items-center justify-center  gap-4 md:gap-8 ">
           {NAV.map((item) => {
             const active = pathname === item.href;
             return (

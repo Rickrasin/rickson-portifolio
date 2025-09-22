@@ -1,9 +1,9 @@
-import HeroSection from "@/components/section/HeroSection";
-import Experience from "@/components/section/Experience";
-import Stacks from "@/components/section/StackSection";
-import Services from "@/components/section/Services";
-import Projects from "@/components/section/Projects";
-import Contact from "@/components/section/Contact";
+import HeroSection from "@/components/pages/HomePage/HeroSection";
+import Experience from "@/components/pages/HomePage/ExperienceSection";
+import Stacks from "@/components/pages/HomePage/StackSection";
+import Services from "@/components/pages/HomePage/ServicesSection";
+import Projects from "@/components/pages/HomePage/ProjectsSection";
+import Contact from "@/components/pages/HomePage/ContactSection";
 import { PROJECTS, STACKS, FEATURED_STACK_IDS } from "@/lib/data/data";
 
 export default function Home() {

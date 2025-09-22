@@ -1,4 +1,4 @@
-export default function Contact() {
+export default function ContactSection() {
   return (
     <section id="contact" className="rounded-2xl bg-[#0A0A0A] border border-[#1C282F] p-6">
       <h3 className="text-xl font-semibold">Contato</h3>

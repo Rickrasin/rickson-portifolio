@@ -2,14 +2,14 @@
 import { Project } from "@/lib/types";
 import ProjectCard from "@/components/layout/Project/ProjectCard";
 import EmptyCard from "@/components/layout/Project/EmptyCard";
-import Card from "../ui/CardSection/CardSection";
+import Card from "../../ui/CardSection/CardSection";
 
 type Props = {
   projects: Project[];
   maxVisible?: number; // limite de itens exibidos (default: 3)
 };
 
-export default function Experience({ projects, maxVisible = 3 }: Props) {
+export default function ExperienceSection({ projects, maxVisible = 3 }: Props) {
   const visible = (projects ?? []).slice(0, Math.max(0, maxVisible));
 
   return (

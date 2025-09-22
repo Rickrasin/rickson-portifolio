@@ -1,6 +1,6 @@
 import CardOutlineSection from "@/components/ui/CardSection/CardOutlineSection";
 import StackTile from "@/components/ui/Stack/StackTile";
-import { Button } from "@/components/ui/buttons/Button";
+import { Button } from "@/components/ui/Buttons/Button";
 import { StackItem } from "@/lib/types";
 
 type StacksSectionProps = {

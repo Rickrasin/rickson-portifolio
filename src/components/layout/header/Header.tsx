@@ -2,11 +2,11 @@
 import * as React from "react";
 import { usePathname } from "next/navigation";
 import { NAV, SOCIALS } from "@/lib/data/data";
-import SquareIconButton from "@/components/ui/buttons/SquareIconButton";
-import IconButton from "@/components/ui/buttons/IconButton";
-import Drawer from "@/components/layout/header/Drawer";
+import SquareIconButton from "@/components/ui/Buttons/SquareIconButton";
+import IconButton from "@/components/ui/Buttons/IconButton";
+import Drawer from "@/components/layout/Header/Drawer";
 import { IoMenu, IoCloseSharp } from "react-icons/io5";
-import Logo from "@/components/layout/sidebar/Logo";
+import Logo from "@/components/ui/Logo";
 
 const MD_BP = 768;
 
