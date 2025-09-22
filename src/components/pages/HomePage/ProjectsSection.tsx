@@ -2,7 +2,7 @@
 import CardOutlineSection from "@/components/ui/CardSection/CardOutlineSection";
 import ProjectCard from "@/components/layout/Project/ProjectCard";
 import { PROJECTS } from "@/lib/data";
-import { Button } from "@/components/ui/asdas/Button";
+import { Button } from "@/components/ui/Button/Button";
 import { MdArrowForward } from "react-icons/md";
 
 function cn(...c: Array<string | false | null | undefined>) {

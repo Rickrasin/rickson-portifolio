@@ -1,6 +1,6 @@
 import Image from "next/image";
 import { Project } from "@/lib/types";
-import { Button } from "@/components/ui/asdas/Button";
+import { Button } from "@/components/ui/Button/Button";
 import { MdArrowOutward } from "react-icons/md";
 import Badge from "@/components/ui/Badge/Badge";
 

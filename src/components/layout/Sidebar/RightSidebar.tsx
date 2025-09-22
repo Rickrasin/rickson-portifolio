@@ -1,6 +1,6 @@
 import React from "react";
 import { SOCIALS } from "@/lib/data";
-import SquareIconButton from "@/components/ui/asdas/SquareIconButton";
+import SquareIconButton from "@/components/ui/Button/SquareIconButton";
 import Sidebar from "@/components/layout/Sidebar/SidePanel";
 
 const RightSidebar = () => {
