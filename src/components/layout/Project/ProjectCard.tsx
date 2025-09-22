@@ -70,7 +70,7 @@ export default function ProjectCard({
           </div>
         )}
 
-        <div className="mt-auto pt-3 sm:pt-4 flex flex-col sm:flex-row gap-2 sm:gap-3 md:gap-4">
+        <div className="mt-auto pt-3 sm:pt-4 flex flex-col xl:flex-row gap-2 sm:gap-3 md:gap-4">
           {liveURL && (
             <Button
               href={liveURL}

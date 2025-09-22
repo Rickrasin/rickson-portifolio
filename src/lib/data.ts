@@ -25,12 +25,19 @@ import {
   SiPython,
 } from "react-icons/si";
 
+import {
+  MdBolt,
+  MdApartment,
+  MdDashboard,
+  MdAutoAwesome,
+} from "react-icons/md";
+
 import { TbLetterZ } from "react-icons/tb";
 import { RiFileList3Line } from "react-icons/ri";
 
 import { FaDiscord, FaLinkedin, FaGithub, FaXTwitter } from "react-icons/fa6";
 
-import { NavItem, Project, SocialItem, StackItem } from "@/lib/types";
+import { NavItem, Project, ServiceItem, SocialItem, StackItem } from "@/lib/types";
 
 export const NAV: NavItem[] = [
   { label: "Home", href: "/", icon: FiHome },
@@ -53,15 +60,41 @@ export const SOCIALS: SocialItem[] = [
   },
 ];
 
-export const SERVICES = [
-  { title: "Landing Pages", desc: "Páginas rápidas focadas em conversão" },
+export const SERVICES: ServiceItem[] = [
+  {
+    title: "Landing Pages",
+    desc: "Páginas ultrarrápidas e focadas em conversão, com SEO e tracking prontos.",
+    icon: MdBolt,
+    href: "/contato",
+    ctaLabel: "Planejar campanha",
+    badge: "Alta conversão",
+    highlights: ["Teste A/B", "Pixel e eventos", "Copy orientada a CTA"],
+    color: "#eebb46",
+  },
   {
     title: "Sites Institucionais",
-    desc: "Sites modernos, responsivos e fáceis de editar",
+    desc: "Sites modernos, responsivos e fáceis de editar, com CMS e acessibilidade.",
+    icon: MdApartment,
+    href: "/contato",
+    ctaLabel: "Solicitar proposta",
+    highlights: ["Next.js + CMS", "SEO técnico", "Design responsivo"],
   },
   {
     title: "Web Apps",
-    desc: "Sistemas sob medida (ex.: delivery, dashboards)",
+    desc: "Aplicações sob medida (ex.: dashboards, CRMs, delivery) com auth e integrações.",
+    icon: MdDashboard,
+    href: "/contato",
+    ctaLabel: "Discutir requisitos",
+    highlights: ["RBAC/Auth", "APIs & Webhooks", "Observabilidade"],
+  },
+  {
+    title: "Automação de Processos",
+    desc: "Integrações e automações (no-code/low-code/scripts) para reduzir tarefas repetitivas e erros.",
+    icon: MdAutoAwesome,
+    href: "/contato",
+    ctaLabel: "Mapear fluxos",
+    badge: "Novo",
+    highlights: ["Zaps/Make", "Bots e cron jobs", "Planilhas → APIs"],
   },
 ];
 

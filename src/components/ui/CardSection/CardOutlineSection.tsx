@@ -15,7 +15,8 @@ const CardOutlineSection = ({
     <section
       id={id}
       aria-label={ariaLabel}
-      className={["relative neon-projects "].join(" ")}
+      className={["flex flex-col gap-8",
+        "relative neon-projects "].join(" ")}
     >
       {children}
     </section>

@@ -14,7 +14,7 @@ const CardSection = ({ children, id, ariaLabel }: SidebarLayoutProps) => {
       className={[
         "flex flex-col gap-8",
         "relative isolate overflow-hidden rounded-2xl",
-        "p-5 lg:p-8",
+        "p-4 lg:p-8",
         "border border-obsidianGray/80 bg-transparent"
       ].join(" ")}
     >

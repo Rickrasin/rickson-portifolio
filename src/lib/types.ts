@@ -43,3 +43,14 @@ export type StackItem = {
   site: string; // link oficial
   color: string; // cor principal da marca
 };
+
+export type ServiceItem = {
+  title: string;
+  desc: string;
+  icon?: IconType;
+  href?: string;
+  ctaLabel?: string;
+  badge?: string;
+  highlights?: string[];
+  color?: string;
+};

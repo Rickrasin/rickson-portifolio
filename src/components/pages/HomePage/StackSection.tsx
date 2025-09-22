@@ -37,16 +37,16 @@ export default function StacksSection({
 
   return (
     <CardOutlineSection id={id} ariaLabel="Seção de Stacks">
-      <div className="mb-5">
-        <div className="flex items-center gap-2">
+      <div className="flex flex-col gap-2">
+        <div className="flex items-center gap-4">
           <h2 className="text-lg sm:text-xl md:text-2xl font-semibold text-textApp">
             {title}
           </h2>
           <span className="hidden md:inline h-px flex-1 bg-gradient-to-r from-azureEdge/60 via-azureSoft/40 to-transparent" />
         </div>
         {subtitle && (
-          <p className="mt-2 text-sm md:text-base text-textApp/70">
-            {subtitle}
+          <p className="text-sm md:text-base text-textApp/70">
+            teste
           </p>
         )}
       </div>
@@ -60,7 +60,7 @@ export default function StacksSection({
           className={[
             "grid",
             "grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4",
-            "gap-3 md:gap-4"
+            "gap-4 "
           ].join(" ")}
         >
           {items.map((s) => (
@@ -80,7 +80,7 @@ export default function StacksSection({
 
       {/* CTA */}
       {hasMore && (
-        <div className="mt-6 text-center">
+        <div className=" text-center">
           <Button href={moreHref} variant="primary">
             Ver mais
           </Button>

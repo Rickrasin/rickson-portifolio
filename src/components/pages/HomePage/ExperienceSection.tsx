@@ -5,34 +5,32 @@ import EmptyCard from "@/components/layout/Project/EmptyCard";
 import Card from "@/components/ui/CardSection/CardSection";
 
 type Props = {
+  title: string;
+  subtitle: string | React.ReactNode;
   projects: Project[];
   maxVisible?: number; // limite de itens exibidos (default: 3)
 };
 
-export default function ExperienceSection({ projects, maxVisible = 3 }: Props) {
+export default function ExperienceSection({ title = "Experiências", subtitle = <>
+  Ainda sem experiência formal, <strong>atuo como freelancer</strong> e
+  busco minha primeira oportunidade como dev.
+</>, projects, maxVisible = 3 }: Props) {
   const visible = (projects ?? []).slice(0, Math.max(0, maxVisible));
 
   return (
     <Card id="experiencias" ariaLabel={"exp-heading"}>
       {/* Cabeçalho */}
-      <div className="mb-4 sm:mb-5 md:mb-6">
-        <div className="flex items-center gap-2 sm:gap-3">
+      <div className="flex flex-col gap-2">
+        <div className="flex items-center gap-4">
           <h2
-            id="exp-heading"
             className="text-lg sm:text-xl md:text-2xl font-semibold text-textApp"
           >
-            Experiências
+            {title}
           </h2>
           <span className="hidden md:inline h-px flex-1 bg-gradient-to-r from-azureEdge/60 via-azureSoft/40 to-transparent" />
         </div>
-
-        <p className="mt-2 sm:mt-3 text-sm md:text-base text-textApp/70">
-          Ainda não tenho experiência formal em empresas,
-          <strong className="text-textApp">
-            {" "}
-            mas atuo com trabalhos freelancers
-          </strong>{" "}
-          enquanto busco minha primeira oportunidade como dev.
+        <p className="text-sm md:text-base text-textApp/70">
+          {subtitle}
         </p>
       </div>
 

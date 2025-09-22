@@ -3,11 +3,11 @@ import SocialTicker from "@/components/ui/SocialTicker";
 import HeroImage from "@/components/ui/HeroImage/Image";
 import { Button } from "@/components/ui/Button/Button";
 import { MdArrowForward } from "react-icons/md";
-import Card from "@/components/ui/CardSection/CardSection";
+import CardSection from "@/components/ui/CardSection/CardSection";
 
 export default function HeroSection() {
   return (
-    <Card id="hero" ariaLabel="Apresentação Rickson">
+    <CardSection id="hero" ariaLabel="Apresentação Rickson">
       <div
         aria-hidden
         className="pointer-events-none absolute -inset-28 lg:-inset-32 -z-10 rounded-[inherit] blur-2xl lg:blur-3xl neon-glow animate-neon"
@@ -32,7 +32,7 @@ export default function HeroSection() {
             Olá, eu sou o <span className="text-phoenixGold">Rickson</span>
           </h1>
 
-          <p className="text-base sm:text-lg text-appText/80">
+          <p className="text-base md:text-lg text-appText/80">
             Transformo ideias em produtos digitais robustos — do design de
             interface ao backend.
           </p>
@@ -58,6 +58,6 @@ export default function HeroSection() {
       </div>
 
       <SocialTicker />
-    </Card>
+    </CardSection>
   );
 }
