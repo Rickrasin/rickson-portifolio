@@ -3,7 +3,7 @@
 import * as React from "react";
 import Link from "next/link";
 
-export type ButtonVariant = "primary" | "secondary" | "outline";
+export type ButtonVariant = "primary" | "secondary" | "outline" | "whatsapp";
 
 export type ButtonProps = {
   variant?: ButtonVariant;
@@ -53,7 +53,17 @@ const variants: Record<ButtonVariant, string> = {
     "active:translate-y-[1px]",
     "focus-visible:ring-white",
     "focus-visible:ring-offset-[color:var(--color-appBg)]"
-  ].join(" ")
+  ].join(" "),
+  whatsapp: [
+    "bg-[#25D366] text-midnightBlack",
+    // sombra/hover
+    "shadow-[0_0_0_0_rgba(0,0,0,0)]",
+    "hover:shadow-[0_12px_32px_-10px_rgba(37,211,102,0.55)]",
+    "active:translate-y-[1px]",
+    // foco coerente com sua API de focus-visible
+    "focus-visible:ring-white",
+    "focus-visible:ring-offset-[color:#25D366]"
+  ].join(" "),
 };
 
 function ButtonContent({
@@ -116,11 +126,11 @@ export function Button({
           disabled
             ? (e) => e.preventDefault()
             : onClick
-            ? (e) =>
+              ? (e) =>
                 (
                   onClick as unknown as React.MouseEventHandler<HTMLAnchorElement>
                 )(e)
-            : undefined
+              : undefined
         }
       >
         <ButtonContent leftIcon={leftIcon} rightIcon={rightIcon}>
