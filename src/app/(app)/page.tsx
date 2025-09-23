@@ -5,6 +5,7 @@ import Services from "@/components/pages/HomePage/ServicesSection";
 import Projects from "@/components/pages/HomePage/ProjectsSection";
 import Contact from "@/components/pages/HomePage/ContactSection";
 import { PROJECTS, STACKS, FEATURED_STACK_IDS, SERVICES } from "@/lib/data";
+import FooterSection from "@/components/layout/Footer/FooterSection";
 
 export default function Home() {
   return (
@@ -15,9 +16,8 @@ export default function Home() {
       <Services services={SERVICES} />
       <Projects />
       <Contact />
-      <footer className="pb-12 text-center text-xs">
-        © {new Date().getFullYear()} Rickson Dev — feito com Next.js
-      </footer>
+      <FooterSection />
+
     </>
   );
 }

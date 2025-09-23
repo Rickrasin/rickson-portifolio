@@ -80,7 +80,7 @@ function ButtonContent({
           {leftIcon}
         </span>
       )}
-      <span>{children}</span>
+      <span className="truncate">{children}</span>
       {rightIcon && (
         <span aria-hidden className="shrink-0">
           {rightIcon}

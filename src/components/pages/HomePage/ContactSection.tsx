@@ -32,7 +32,7 @@ export default function ContactSection() {
       .filter(Boolean)
       .join("\n");
 
-    return encodeURIComponent(lines || "Olá! Quero falar sobre um projeto 👋");
+    return encodeURIComponent(lines || "Olá! Quero falar sobre um projeto");
   }, [form]);
 
   const waHref = `https://wa.me/${WHATSAPP_NUMBER}?text=${waText}`;
@@ -150,7 +150,7 @@ export default function ContactSection() {
             href={waHref}
             target="_blank"
             leftIcon={<PiWhatsappLogoBold className="size-5" />}
-            disabled={!canWhats || status === "loading"}
+            disabled={status === "loading"}
           >
             Falar no WhatsApp
           </Button>

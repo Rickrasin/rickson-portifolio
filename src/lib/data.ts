@@ -37,7 +37,13 @@ import { RiFileList3Line } from "react-icons/ri";
 
 import { FaDiscord, FaLinkedin, FaGithub, FaXTwitter } from "react-icons/fa6";
 
-import { NavItem, Project, ServiceItem, SocialItem, StackItem } from "@/lib/types";
+import {
+  NavItem,
+  Project,
+  ServiceItem,
+  SocialItem,
+  StackItem,
+} from "@/lib/types";
 
 export const NAV: NavItem[] = [
   { label: "Home", href: "/", icon: FiHome },
@@ -348,3 +354,22 @@ export const FEATURED_STACK_IDS = [
   "git",
   "figma",
 ] as const;
+
+export const SERVICEFLOW = [
+  {
+    t: "Briefing",
+    d: "Entendo sua necessidade, público e objetivo (rápido e direto).",
+  },
+  {
+    t: "Proposta",
+    d: "Escopo fechado, prazos e investimento transparentes.",
+  },
+  {
+    t: "Design & Dev",
+    d: "UI moderna, performance e SEO técnico desde o início.",
+  },
+  {
+    t: "Lançamento",
+    d: "Deploy, monitoramento inicial e suporte para ajustes.",
+  },
+];
