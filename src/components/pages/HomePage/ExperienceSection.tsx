@@ -4,9 +4,9 @@ import ProjectCard from "@/components/layout/Project/ProjectCard";
 import EmptyCard from "@/components/layout/Project/EmptyCard";
 import Card from "@/components/ui/CardSection/CardSection";
 
-type Props = {
-  title: string;
-  subtitle: string | React.ReactNode;
+type ExperienceSectionProps = {
+  title?: string;
+  subtitle?: string | React.ReactNode;
   projects: Project[];
   maxVisible?: number; // limite de itens exibidos (default: 3)
 };
@@ -14,7 +14,7 @@ type Props = {
 export default function ExperienceSection({ title = "Experiências", subtitle = <>
   Ainda sem experiência formal, <strong>atuo como freelancer</strong> e
   busco minha primeira oportunidade como dev.
-</>, projects, maxVisible = 3 }: Props) {
+</>, projects, maxVisible = 3 }: ExperienceSectionProps) {
   const visible = (projects ?? []).slice(0, Math.max(0, maxVisible));
 
   return (
