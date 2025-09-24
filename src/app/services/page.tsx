@@ -1,4 +1,3 @@
-import Link from "next/link";
 import ServicesSection from "@/components/pages/HomePage/ServicesSection";
 import CardOutlineSection from "@/components/ui/CardSection/CardOutlineSection";
 import type { Metadata } from "next";
@@ -112,7 +111,7 @@ export default function ServicesPage() {
 
             {/* CTA final */}
             < CardSection id="cta" ariaLabel="Entre em contato" >
-                <div className="flex flex-col sm:flex-row md:flex-col lg:flex-row text-center sm:text-start md:text-center lg:text-start gap-4">
+                <div className="flex flex-col sm:flex-row md:flex-col lg:flex-row justify-between text-center sm:text-start md:text-center lg:text-start gap-4">
                     <div className="flex flex-col gap-1">
                         <h2 className="text-lg sm:text-xl md:text-2xl font-semibold text-textApp">
                             Pronto para começar?
