@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
+import { NextIntlClientProvider } from "next-intl";
+import { getMessages, getLocale } from "next-intl/server";
 import Sidebar from "@/components/layout/Sidebar/SidebarsLayout";
 import "@/styles/globals.css";
 
@@ -19,21 +21,27 @@ export const metadata: Metadata = {
   icons: "/favicon.svg"
 };
 
-export default function RootLayout({
+export default async function RootLayout({
   children
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const locale = await getLocale();
+  const messages = await getMessages();
+
+  console.log(locale);
   return (
-    <html lang="pt-BR" className="dark">
+    <html lang="pt-br">
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        <Sidebar>
-          <main className="min-h-dvh px-4 md:px-8 py-8 overflow-hidden flex flex-col gap-16">
-            {children}
-          </main>
-        </Sidebar>
+        <NextIntlClientProvider locale={locale} messages={messages}>
+          <Sidebar>
+            <main className="min-h-dvh px-5 md:px-8 py-8 overflow-hidden flex flex-col gap-8">
+              {children}
+            </main>
+          </Sidebar>
+        </NextIntlClientProvider>
       </body>
     </html>
   );

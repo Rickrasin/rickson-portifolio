@@ -1,4 +1,48 @@
 {
-  "hero.title": "Olá, eu sou o Rickson",
-  "hero.subtitle": "Transformo ideias em produtos digitais robustos — do design de interface ao backend."
+  "nav": {
+    "services": "Serviços",
+    "projects": "Projetos",
+    "contact": "Contato"
+  },
+  "common": { "viewServices": "Ver serviços" },
+
+  "home": {
+    "hero": {
+      "title": "Olá, eu sou o Rickson",
+      "highlight": "Rickson",
+      "subtitle": "Transformo ideias em produtos digitais robustos — do design de interface ao backend.",
+      "viewProjects": "Ver projetos",
+      "contactMe": "Fale comigo"
+    },
+    "experience": {
+      "title": "Experiências",
+      "subtitle": {
+        "text": "Ainda sem experiência formal, atuo como freelancer e busco minha primeira oportunidade como dev.",
+        "highlight": "atuo como freelancer"
+      }
+    },
+    "stacks": {
+      "title": "Stacks"
+    },
+    "services": {
+      "title": "Meus Serviços"
+    },
+    "projects": {
+      "title": "Projetos",
+      "viewAll": "Ver todos os projetos"
+    },
+    "contact": {
+      "title": "Vamos conversar?",
+      "subtitle": "Me conte um pouco sobre seu projeto. Respondo normalmente no mesmo dia útil.",
+      "fields": {
+        "name": "Seu Nome",
+        "email": "Seu E-mail",
+        "message": "Mensagem"
+      },
+      "button": {
+        "email": "Enviar e-mail direto",
+        "whatsapp": "Falar no WhatsApp"
+      }
+    }
+  }
 }
