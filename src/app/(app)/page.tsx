@@ -3,7 +3,7 @@ import Experience from "@/components/pages/HomePage/ExperienceSection";
 import Stacks from "@/components/pages/HomePage/StackSection";
 import Services from "@/components/pages/HomePage/ServicesSection";
 import Projects from "@/components/pages/HomePage/ProjectsSection";
-import Contact from "@/components/pages/HomePage/ContactSection";
+import Contact from "@/components/pages/Contact/ContactSection";
 import { PROJECTS, STACKS, FEATURED_STACK_IDS, SERVICES } from "@/lib/data";
 import FooterSection from "@/components/layout/Footer/FooterSection";
 
