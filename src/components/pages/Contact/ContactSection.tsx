@@ -74,8 +74,6 @@ export default function ContactSection() {
     }
   }
 
-  const canWhats = form.name.trim() || form.email.trim() || form.message.trim();
-
   return (
     <CardSection id="contact" ariaLabel="Seção de contato">
       <h2 className="text-xl md:text-2xl font-semibold text-textApp mb-4">
