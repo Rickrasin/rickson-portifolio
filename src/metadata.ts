@@ -1,44 +1,57 @@
 import type { Metadata } from "next";
 
-const SITE_NAME = "Rickson Portifólio";
+const PERSON_NAME = "Rickson de Oliveira";
+const BRAND_NAME = "Rickson.dev";
 const SITE_URL = "https://rickson.dev";
-const OG_IMAGE = `${SITE_URL}/og.png`; 
+
+const DEFAULT_TITLE = `Desenvolvedor Full Stack | ${PERSON_NAME}`;
+const TITLE_TEMPLATE = `%s | ${PERSON_NAME}`;
+
+const DEFAULT_DESCRIPTION =
+  "Desenvolvedor Full Stack (React, Next.js, Node.js, TypeScript). Construo produtos digitais do front ao back — interfaces modernas, integrações e APIs. Veja projetos e entre em contato.";
+
+const OG_IMAGE = "/og.png";
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
 
   title: {
-    default: SITE_NAME,
-    template: `%s | ${SITE_NAME}`
+    default: DEFAULT_TITLE,
+    template: TITLE_TEMPLATE
   },
 
-  description:
-    "Portfólio de Rickson — projetos, experiências e skills em desenvolvimento web.",
+  description: DEFAULT_DESCRIPTION,
 
-  applicationName: SITE_NAME,
-  authors: [{ name: "Rickson", url: SITE_URL }],
-  creator: "Rickson",
-  publisher: "Rickson",
+  applicationName: BRAND_NAME,
+  authors: [{ name: PERSON_NAME, url: SITE_URL }],
+  creator: PERSON_NAME,
+  publisher: PERSON_NAME,
 
   category: "technology",
   keywords: [
-    "Rickson",
-    "Portfólio",
-    "Frontend",
-    "Next.js",
+    PERSON_NAME,
+    "desenvolvedor full stack",
+    "full stack developer",
+    "freelancer",
     "React",
+    "Next.js",
+    "Node.js",
     "TypeScript",
-    "UI/UX",
-    "Web Developer"
+    "API",
+    "integrações",
+    "frontend",
+    "backend",
+    "web app",
+    "SaaS",
+    "UX",
+    "performance",
+    "SEO"
   ],
 
   alternates: {
-    canonical: "/",
-    // Se você realmente tiver rotas por idioma, descomente e ajuste:
-    languages: {
-      "pt-BR": "/pt-BR",
-      en: "/en"
-    }
+    canonical: "/"
+    // Só inclua languages se você tiver rotas reais:
+    // languages: { "pt-BR": "/", en: "/en" }
   },
 
   robots: {
@@ -53,41 +66,39 @@ export const metadata: Metadata = {
     }
   },
 
-icons: {
-  icon: [
-    { url: "/icon.png", type: "image/png", sizes: "32x32" },
-    { url: "/favicon.svg", type: "image/svg+xml" } 
-  ],
-  apple: [{ url: "/apple-touch-icon.png", sizes: "180x180" }]
-},
+  icons: {
+    icon: [
+      { url: "/favicon.ico" }, // altamente recomendado p/ compatibilidade
+      { url: "/icon.png", type: "image/png", sizes: "32x32" },
+      { url: "/favicon.svg", type: "image/svg+xml" }
+    ],
+    apple: [{ url: "/apple-touch-icon.png", sizes: "180x180" }]
+  },
 
   manifest: "/site.webmanifest",
 
   openGraph: {
     type: "website",
     url: SITE_URL,
-    title: SITE_NAME,
-    description:
-      "Portfólio de Rickson — projetos, experiências e skills em desenvolvimento web.",
-    siteName: SITE_NAME,
+    title: DEFAULT_TITLE,
+    description: DEFAULT_DESCRIPTION,
+    siteName: BRAND_NAME,
     locale: "pt_BR",
     images: [
       {
         url: OG_IMAGE,
         width: 1200,
         height: 630,
-        alt: `${SITE_NAME} — projetos e experiências`
+        alt: `${PERSON_NAME} — Desenvolvedor Full Stack`
       }
     ]
   },
 
   twitter: {
     card: "summary_large_image",
-    title: SITE_NAME,
-    description:
-      "Portfólio de Rickson — projetos, experiências e skills em desenvolvimento web.",
-    images: [OG_IMAGE],
-    creator: "@seu_user" // opcional
+    title: DEFAULT_TITLE,
+    description: DEFAULT_DESCRIPTION,
+    images: [OG_IMAGE]
   },
 
   verification: {
