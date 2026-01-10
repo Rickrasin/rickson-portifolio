@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 
 const SITE_NAME = "Rickson Portifólio";
 const SITE_URL = "https://rickson.dev";
-const OG_IMAGE = `${SITE_URL}/og.png`; // crie /public/og.png (1200x630)
+const OG_IMAGE = `${SITE_URL}/og.png`; 
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
@@ -53,13 +53,13 @@ export const metadata: Metadata = {
     }
   },
 
-  icons: {
-    icon: [
-      { url: "/favicon.svg", type: "image/svg+xml" },
-      { url: "/favicon.ico" }
-    ],
-    apple: [{ url: "/apple-touch-icon.svg", sizes: "180x180" }]
-  },
+icons: {
+  icon: [
+    { url: "/icon.png", type: "image/png", sizes: "32x32" },
+    { url: "/favicon.svg", type: "image/svg+xml" } 
+  ],
+  apple: [{ url: "/apple-touch-icon.png", sizes: "180x180" }]
+},
 
   manifest: "/site.webmanifest",
 
