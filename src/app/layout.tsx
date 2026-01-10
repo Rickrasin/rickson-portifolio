@@ -3,6 +3,7 @@ import { Geist, Geist_Mono } from "next/font/google";
 import { NextIntlClientProvider } from "next-intl";
 import { getMessages, getLocale } from "next-intl/server";
 import Sidebar from "@/components/layout/Sidebar/SidebarsLayout";
+import { Analytics } from "@vercel/analytics/next";
 import "@/styles/globals.css";
 
 const geistSans = Geist({
@@ -42,6 +43,7 @@ export default async function RootLayout({
           <Sidebar>
             <main className="min-h-dvh px-5 md:px-8 py-8 overflow-hidden flex flex-col gap-8">
               {children}
+              <Analytics />
             </main>
           </Sidebar>
         </NextIntlClientProvider>
