@@ -1,5 +1,5 @@
 import type { IconType } from "react-icons";
-import Link from "next/link";
+import { Link } from "@/i18n/navigation";
 import { MdArrowOutward } from "react-icons/md";
 
 export type StackTileProps = {

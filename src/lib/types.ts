@@ -22,6 +22,9 @@ export type Project = {
   repoURL?: string;
   thumb?: string;
   tags?: string[];
+  featured?: boolean;
+  date?: string;
+  year?: number;
 };
 
 export type StackCategory =
