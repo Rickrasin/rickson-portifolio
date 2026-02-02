@@ -52,11 +52,11 @@ export const NAV: NavItem[] = [
 ];
 
 export const SOCIALS: SocialItem[] = [
-  { label: "Github", icon: FaGithub, href: "https://github.com/seu-usuario" },
+  { label: "Github", icon: FaGithub, href: "https://github.com/Rickrasin" },
   {
     label: "Linkedin",
     icon: FaLinkedin,
-    href: "https://linkedin.com/seu-usuario",
+    href: "https://www.linkedin.com/in/ricksondev/",
   },
 ];
 

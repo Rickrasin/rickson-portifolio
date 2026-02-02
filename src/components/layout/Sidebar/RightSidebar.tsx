@@ -1,4 +1,3 @@
-// src/components/layout/Sidebar/RightSidebar.tsx
 import React from "react";
 import { SOCIALS } from "@/lib/data";
 import SquareIconButton from "@/components/ui/Button/SquareIconButton";
