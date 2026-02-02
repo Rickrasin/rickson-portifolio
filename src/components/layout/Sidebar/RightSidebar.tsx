@@ -9,7 +9,7 @@ const RightSidebar = () => {
     return (
         <Sidebar side="right" ariaLabel="secondary" className="md:pr-2 md:pl-4">
             <div className="flex flex-col h-full">
-                <div className="mt-6 flex items-center justify-center">
+                <div className="mt-6 flex items-center justify-center hidden">
                     <LanguageSwitchButton />
                 </div>
 
