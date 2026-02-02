@@ -76,7 +76,7 @@ export default function ContactSection() {
 
   return (
     <CardSection id="contact" ariaLabel="Seção de contato">
-      <h2 className="text-xl md:text-2xl font-semibold text-textApp mb-4">
+      <h2 className="text-xl md:text-2xl font-semibold text-textApp mb-6">
         Entre em Contato
       </h2>
 

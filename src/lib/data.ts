@@ -3,7 +3,6 @@ import {
   FiTool,
   FiFolderMinus,
   FiMail,
-  FiTwitter,
 } from "react-icons/fi";
 
 import {
@@ -35,7 +34,7 @@ import {
 import { TbLetterZ } from "react-icons/tb";
 import { RiFileList3Line } from "react-icons/ri";
 
-import { FaDiscord, FaLinkedin, FaGithub, FaXTwitter } from "react-icons/fa6";
+import { FaDiscord, FaLinkedin, FaGithub } from "react-icons/fa6";
 
 import {
   NavItem,
@@ -46,10 +45,10 @@ import {
 } from "@/lib/types";
 
 export const NAV: NavItem[] = [
-  { label: "Home", href: "/", icon: FiHome },
-  { label: "Services", href: "/services", icon: FiTool },
-  { label: "Projects", href: "/projects", icon: FiFolderMinus },
-  { label: "Contact", href: "/contact", icon: FiMail },
+  { label: "Home", href: "/#hero", icon: FiHome },
+  { label: "Services", href: "/#services", icon: FiTool },
+  { label: "Projects", href: "/#projects", icon: FiFolderMinus },
+  { label: "Contact", href: "/#contact", icon: FiMail },
 ];
 
 export const SOCIALS: SocialItem[] = [
@@ -58,11 +57,6 @@ export const SOCIALS: SocialItem[] = [
     label: "Linkedin",
     icon: FaLinkedin,
     href: "https://linkedin.com/seu-usuario",
-  },
-  {
-    label: "Twitter",
-    icon: FiTwitter,
-    href: "https://twitter.com/seu-usuario",
   },
 ];
 
@@ -101,36 +95,45 @@ export const SERVICES: ServiceItem[] = [
     ctaLabel: "Mapear fluxos",
     badge: "Novo",
     highlights: ["Zaps/Make", "Bots e cron jobs", "Planilhas → APIs"],
+    
   },
 ];
 
 export const PROJECTS: Project[] = [
   {
-    title: "Projeto 1",
-    description: "Landing page com foco em conversão e performance.",
-    repoURL: "/projetos/projeto-1",
-    tags: ["Next.js", "Tailwind", "SEO"],
-    // thumb: "/images/projeto-1.jpg"
+    title: "Calculadora de IMC",
+    description: "Uma calculadora de IMC simples e responsiva, feita pra você inserir peso e altura e já ver seu resultado na hora.",
+    repoURL: "https://rickrasin.github.io/BMI-Calculator/",
+    liveURL: "https://rickrasin-imc-calculator.netlify.app/",
+    tags: ["React ", "Tailwind"],
+    thumb: "/bmi-frontendmentor.png"
   },
   {
-    title: "Projeto 2",
-    description: "Painel web com autenticação e gráficos.",
-    repoURL: "/projetos/projeto-2",
-    tags: ["React", "Charts", "Auth"],
+    title: "TIFUNS",
+    description:
+      "Portal gamer com notícias, guias e cobertura de e-sports, organizado por categorias (Destaques, Animes, Jogos e E-sports) e focado em conteúdo direto ao ponto.",
+    liveURL: "https://www.tifuns.com",
+    tags: ["Next.js","Blog", "SEO"],
+    thumb: "/tifuns-portifolio.png"
   },
   {
-    title: "Projeto 3",
-    description: "Website institucional responsivo.",
-    repoURL: "/projetos/projeto-3",
-    tags: ["Acessibilidade", "Design System"],
+    title: "Space Tourism Website",
+    description: "Landing page responsiva inspirada em turismo espacial, com navegação por seções e layout moderno — projeto de estudo focado em UI/UX e organização de componentes.",
+    liveURL: "https://rickrasin.github.io/Space-Tourism-Website/",
+    repoURL: "https://github.com/Rickrasin/Space-Tourism-Website",
+    tags: ["Responsividade", "UI/UX", "Estudos"],
+    thumb: "/space-tourism-website.png"
   },
   {
-    title: "Projeto 4",
-    description: "Website institucional responsivo.",
-    repoURL: "/projetos/projeto-4",
-    liveURL: "/projetos/projeto-4",
-    tags: ["Acessibilidade", "Design System"],
-  },
+  title: "Web Dictionary",
+  description:
+    "Dicionário web com busca de palavras e exibição de definições, com foco em UI simples e experiência rápida — projeto de estudo para consumo de API e manipulação de estados.",
+  liveURL: "https://rickrasin.github.io/Web-Dictionary/",
+  repoURL: "https://github.com/Rickrasin/Web-Dictionary",
+  tags: ["API", "JavaScript", "React"],
+  thumb: "/web-dictionary.png",
+},
+
 ];
 
 export const SOCIAL_TICKER: SocialItem[] = [
@@ -145,12 +148,6 @@ export const SOCIAL_TICKER: SocialItem[] = [
     platform: "linkedin",
     href: "https://www.linkedin.com/in/ricksondev/",
     handle: "/in/ricksondev/",
-  },
-  {
-    icon: FaXTwitter,
-    platform: "x",
-    href: "https://x.com/Rickrasin",
-    handle: "@Rickrasin",
   },
   {
     icon: FaDiscord,

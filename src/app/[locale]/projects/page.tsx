@@ -106,7 +106,7 @@ export default function ProjectsPage() {
         <main className="space-y-8">
             {/* Hero no estilo Services */}
             <CardOutlineSection id="hero" ariaLabel="Projetos">
-                <div className="flex flex-col gap-2 text-center md:text-start">
+                <div className="section-header text-center md:text-start">
                     <div className="flex items-center justify-center md:justify-start gap-4 ">
                         <span className=" md:hidden h-px flex-1 bg-gradient-to-l from-azureEdge/60 via-azureSoft/40 to-transparent" />
                         <h2 className="text-lg sm:text-xl md:text-2xl font-semibold text-textApp">

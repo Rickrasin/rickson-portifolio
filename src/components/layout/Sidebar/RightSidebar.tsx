@@ -7,22 +7,26 @@ import LanguageSwitchButton from "@/components/i18n/LanguageSwitchButton";
 
 const RightSidebar = () => {
     return (
-        <Sidebar side="left" ariaLabel="secondary">
-            <div className="fixed h-full flex flex-col justify-center">
-                <div className="flex flex-col items-center gap-8">
-                    {/* Toggle de idioma no topo */}
+        <Sidebar side="right" ariaLabel="secondary" className="md:pr-2 md:pl-4">
+            <div className="flex flex-col h-full">
+                <div className="mt-6 flex items-center justify-center">
                     <LanguageSwitchButton />
-
-                    {/* seus sociais */}
-                    {SOCIALS.map((item) => (
-                        <SquareIconButton
-                            key={item.href}
-                            href={item.href}
-                            label={item.label}
-                            icon={item.icon}
-                        />
-                    ))}
                 </div>
+
+                <nav className="flex-1 flex items-center justify-center">
+                    <div className="flex flex-col items-center gap-2 md:gap-3">
+                        {SOCIALS.slice(0, 4).map((item) => (
+                            <SquareIconButton
+                                key={item.href}
+                                href={item.href}
+                                label={item.label}
+                                icon={item.icon}
+                            />
+                        ))}
+                    </div>
+                </nav>
+
+                <div className="mb-6" />
             </div>
         </Sidebar>
     );

@@ -13,14 +13,14 @@ type ExperienceSectionProps = {
 
 export default function ExperienceSection({ title = "Experiências", subtitle = <>
   Ainda sem experiência formal, <strong>atuo como freelancer</strong> e
-  busco minha primeira oportunidade como dev.
+  busco minha primeira oportunidade como desenvolvedor.
 </>, projects, maxVisible = 3 }: ExperienceSectionProps) {
   const visible = (projects ?? []).slice(0, Math.max(0, maxVisible));
 
   return (
     <Card id="experiencias" ariaLabel={"exp-heading"}>
       {/* Cabeçalho */}
-      <div className="flex flex-col gap-2">
+      <div className="section-header mb-8">
         <div className="flex items-center gap-4">
           <h2
             className="text-lg sm:text-xl md:text-2xl font-semibold text-textApp"

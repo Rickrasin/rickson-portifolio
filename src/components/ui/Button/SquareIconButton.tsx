@@ -63,7 +63,7 @@ export default function SquareIconButton({
     }
 
     // LINK
-    const isExternal = external ?? /^https?:\/\//.test(href);
+    const isExternal = external ?? /^https?:\/\//.test(href as string);
     if (isExternal) {
         return (
             <a href={href} target="_blank" rel="noreferrer" title={label ?? undefined} className={base}>
@@ -73,7 +73,24 @@ export default function SquareIconButton({
     }
 
     return (
-        <Link href={href} title={label ?? undefined} className={base} aria-current={active ? "page" : undefined}>
+        <Link
+            href={href}
+            title={label ?? undefined}
+            className={base}
+            aria-current={active ? "page" : undefined}
+            onClick={(e: React.MouseEvent<HTMLAnchorElement>) => {
+                try {
+                    // eslint-disable-next-line @typescript-eslint/no-var-requires
+                    const { scrollToHash } = require("@/lib/scroll");
+                    const handled = scrollToHash(href as string);
+                    if (handled) e.preventDefault();
+                } catch (err) {
+                    // ignore
+                }
+
+                if (onClick) onClick(e);
+            }}
+        >
             {iconEl}
         </Link>
     );

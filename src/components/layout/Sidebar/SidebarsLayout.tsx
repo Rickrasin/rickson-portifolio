@@ -14,11 +14,11 @@ export default function SidebarLayout({ children }: SidebarLayoutProps) {
     <div className="min-h-dvh bg-appBg text-appText">
       <Header />
 
-      <div className="flex justify-center" >
+      <div className="flex justify-center">
         <div className="hidden md:block bg-transparent">
           <LeftSidebar />
         </div>
-        <div className="flex-1">
+        <div className="flex-1 px-4 md:px-[5.5rem] lg:px-[7rem]">
           {children}
         </div>
         <div className="hidden md:block bg-transparent">

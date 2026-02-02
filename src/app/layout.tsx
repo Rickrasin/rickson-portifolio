@@ -26,7 +26,6 @@ export default async function RootLayout({
   const locale = await getLocale();
   const messages = await getMessages();
 
-  console.log(locale);
   return (
     <html lang="pt-br">
       <body
@@ -34,7 +33,7 @@ export default async function RootLayout({
       >
         <NextIntlClientProvider locale={locale} messages={messages}>
           <Sidebar>
-            <main className="min-h-dvh px-5 md:px-8 py-8 overflow-hidden flex flex-col gap-8">
+            <main className="container-main">
               {children}
               <Analytics />
             </main>

@@ -37,7 +37,7 @@ export default function StacksSection({
 
   return (
     <CardOutlineSection id={id} ariaLabel="Seção de Stacks">
-      <div className="flex flex-col gap-2">
+      <div className="section-header mb-8">
         <div className="flex items-center gap-4">
           <h2 className="text-lg sm:text-xl md:text-2xl font-semibold text-textApp">
             {title}

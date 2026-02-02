@@ -19,11 +19,15 @@ const CardOutlineSection = ({
       aria-label={ariaLabel}
       className={[
         "flex flex-col gap-8",
-        "relative neon-projects",
+        "relative neon-projects rounded-2xl",
         className
       ].filter(Boolean).join(" ")}
     >
-      {children}
+      <div className="relative z-10 p-4 lg:p-8  border-obsidianGray/80 bg-transparent rounded-[inherit]">
+        <div className="neon-content">
+          {children}
+        </div>
+      </div>
     </section>
   );
 };

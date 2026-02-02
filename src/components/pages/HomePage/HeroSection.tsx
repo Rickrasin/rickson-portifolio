@@ -19,12 +19,12 @@ export default function HeroSection() {
       {/* Glow de fundo */}
       <div
         aria-hidden
-        className="pointer-events-none absolute -inset-28 lg:-inset-32 -z-10 rounded-[inherit] blur-2xl lg:blur-3xl neon-glow animate-neon"
+        className="pointer-events-none absolute -inset-10 sm:-inset-16 lg:-inset-32 -z-10 rounded-[inherit] blur-2xl lg:blur-3xl neon-glow animate-neon"
       />
 
       <div
         className={[
-          "relative z-10 grid items-center content-start gap-6",
+          "relative z-10 grid items-center content-start gap-8 sm:gap-10 lg:gap-12",
           "lg:grid-cols-[1.25fr_0.75fr]",
           "justify-items-center lg:justify-items-stretch"
         ].join(" ")}
@@ -33,7 +33,7 @@ export default function HeroSection() {
 
         <div
           className={[
-            "w-full max-w-[680px] space-y-4 lg:space-y-5 text-center lg:text-left",
+            "w-full max-w-[680px] space-y-5 lg:space-y-6 text-center lg:text-left",
             "lg:order-1"
           ].join(" ")}
         >

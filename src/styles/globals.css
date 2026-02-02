@@ -107,6 +107,11 @@ body {
     animation: neonPulse 4s ease-in-out infinite;
   }
 
+  /* ======= Main container utility ======= */
+  .container-main {
+    @apply min-h-dvh px-5 md:px-8 py-8 overflow-visible flex flex-col gap-10 md:gap-12;
+  }
+
   .neon-glow {
     background: radial-gradient(
         60% 50% at 60% 20%,
@@ -135,21 +140,7 @@ body {
 
   /* Pulse do halo da seção Projects */
   @keyframes neonProjectsPulse {
-    0% {
-      opacity: 0.72;
-      transform: translate(-50%, -50%) scale(0.985);
-      filter: blur(42px);
-    }
-    50% {
-      opacity: 0.95;
-      transform: translate(-50%, -50%) scale(1.015);
-      filter: blur(52px);
-    }
-    100% {
-      opacity: 0.72;
-      transform: translate(-50%, -50%) scale(0.985);
-      filter: blur(42px);
-    }
+
   }
 
   /* Fora do @layer (ou garanta que venha depois das utilities) */
@@ -199,12 +190,86 @@ body {
     z-index: 1;
   }
 
+  /* Allow neon glows to overflow sections especially on small screens */
+  .neon-projects {
+    overflow: visible;
+  }
+
+  /* Small/internal glows should overflow on mobile but be clipped on larger screens */
+  .neon-glow, .neon-glow-sm {
+    overflow: visible; /* element-level: let them visually spill */
+  }
+
+  /* Fix horizontal scroll on mobile: cap glow sizes and center them */
+  @media (max-width: 767px) {
+    .neon-projects::before {
+      width: min(900px, 100vw);
+      height: min(700px, 60vh);
+      left: 50%;
+      right: auto;
+      transform: translate(-50%, -50%);
+      max-width: 100vw;
+      box-sizing: border-box;
+    }
+
+    .neon-glow {
+      inset: auto !important;
+      left: 50% !important;
+      right: auto !important;
+      transform: translateX(-50%) !important;
+      width: 90vw;
+      filter: blur(32px);
+      max-width: 100vw;
+    }
+
+    .neon-glow-sm {
+      inset: auto !important;
+      left: 50% !important;
+      right: auto !important;
+      transform: translateX(-50%) !important;
+      width: 70vw;
+      filter: blur(24px);
+      max-width: 100vw;
+    }
+
+    /* prevent any accidental horizontal scroll when glows overflow */
+    html, body {
+      overflow-x: hidden;
+    }
+
+    /* also protect main container */
+    .container-main {
+      overflow-x: hidden;
+    }
+  }
+
   @media (prefers-reduced-motion: reduce) {
     .neon-projects::before {
       animation: none;
       transform: translate(-50%, -50%) scale(1);
       filter: blur(46px);
       opacity: 0.9;
+    }
+  }
+
+  /* Desktop: suavizar neon (menor opacidade e blur) */
+  @media (min-width: 1024px) {
+    .neon-projects::before {
+      filter: blur(28px);
+      opacity: 0.35;
+      width: min(800px, 1000px);
+      height: min(560px, 700px);
+      transform: translate(-50%, -50%) scale(0.95);
+    }
+
+    .neon-glow {
+      filter: blur(28px);
+      opacity: 0.5;
+    }
+
+    .neon-glow-sm {
+      filter: blur(20px);
+      opacity: 0.6;
     }
   }
 

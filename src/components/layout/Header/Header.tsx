@@ -13,6 +13,7 @@ const MD_BP = 768;
 export default function Header({ logo = "/logo.svg" }: { logo?: string }) {
   const [open, setOpen] = React.useState(false);
   const pathname = usePathname();
+  const [hash, setHash] = React.useState("");
 
   React.useEffect(() => setOpen(false), [pathname]);
 
@@ -22,6 +23,13 @@ export default function Header({ logo = "/logo.svg" }: { logo?: string }) {
     };
     window.addEventListener("resize", onResize);
     return () => window.removeEventListener("resize", onResize);
+  }, []);
+
+  React.useEffect(() => {
+    const handler = () => setHash(window.location.hash || "");
+    handler();
+    window.addEventListener("hashchange", handler);
+    return () => window.removeEventListener("hashchange", handler);
   }, []);
 
   return (
@@ -48,7 +56,10 @@ export default function Header({ logo = "/logo.svg" }: { logo?: string }) {
             <ul className="flex flex-col gap-2">
               {NAV.map((item) => {
                 const Icon = item.icon;
-                const active = pathname === item.href;
+                const [basePath, hashPart] = (item.href || "").split("#");
+                const itemPath = basePath || "/";
+                const itemHash = hashPart ? `#${hashPart}` : null;
+                const active = pathname === itemPath && (!itemHash || hash === itemHash);
                 return (
                   <li key={item.href}>
                     <IconButton
@@ -56,6 +67,7 @@ export default function Header({ logo = "/logo.svg" }: { logo?: string }) {
                       label={item.label ?? item.href}
                       icon={Icon}
                       active={active}
+                      onClick={() => setOpen(false)}
                     />
                   </li>
                 );

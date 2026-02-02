@@ -19,12 +19,12 @@ export default function ProjectCard({
   return (
     <article
       className={[
-        "h-full flex flex-col overflow-hidden rounded-xl",
+        "h-full flex flex-col overflow-visible md:overflow-hidden rounded-xl",
         "border border-obsidianGray/60 bg-appBg/40",
         "shadow-[inset_0_1px_0_rgba(255,255,255,0.05)]"
       ].join(" ")}
     >
-      <div className="relative aspect-[4/3] sm:aspect-[16/9] bg-white">
+      <div className="relative aspect-[4/3] sm:aspect-[16/9] bg-white rounded-t-xl overflow-hidden">
         {thumb ? (
           <Image
             src={thumb}

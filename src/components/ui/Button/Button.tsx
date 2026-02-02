@@ -121,17 +121,29 @@ export function Button({
         tabIndex={disabled ? -1 : undefined}
         target={target}
         rel={target === "_blank" ? "noopener noreferrer" : undefined}
-        // impede navegação se “desabilitado”
-        onClick={
-          disabled
-            ? (e) => e.preventDefault()
-            : onClick
-              ? (e) =>
-                (
-                  onClick as unknown as React.MouseEventHandler<HTMLAnchorElement>
-                )(e)
-              : undefined
-        }
+        // impede navegação se “desabilitado” ou intercepta hash para smooth scroll
+        onClick={(e: React.MouseEvent<HTMLAnchorElement>) => {
+          if (disabled) {
+            e.preventDefault();
+            return;
+          }
+          // dynamic import to avoid server issues, but it's fine in client files
+          try {
+            // lazy import to avoid bundling if unused
+            // eslint-disable-next-line @typescript-eslint/no-var-requires
+            const { scrollToHash } = require("@/lib/scroll");
+            const handled = scrollToHash(href);
+            if (handled) {
+              e.preventDefault();
+            }
+          } catch (err) {
+            // ignore
+          }
+
+          if (onClick) {
+            (onClick as unknown as React.MouseEventHandler<HTMLAnchorElement>)(e);
+          }
+        }}
       >
         <ButtonContent leftIcon={leftIcon} rightIcon={rightIcon}>
           {children}

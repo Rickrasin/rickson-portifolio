@@ -8,17 +8,19 @@ const Sidebar = ({
     children,
     side = "right",
     ariaLabel = "Primary",
+    className = "",
 }: SidebarProps) => {
     return (
         <aside
             aria-label={ariaLabel}
-            aria-hidden
+            aria-hidden="true"
             className={[
-                "relative",
-                " flex justify-center",
-                "h-full min-w-32 4xl:min-w-[16rem]",
-                side == "right" ? "border-r border-line" : "border-l border-line",
-                "px-3 md:px-8 py-8",
+                "hidden md:flex fixed top-0 h-full z-30",
+                side === "left" ? "left-0" : "right-0",
+                "w-16 sm:w-20 md:w-20 lg:w-24",
+                side === "left" ? "border-r border-line" : "border-l border-line",
+                "px-2 md:px-4 py-6",
+                className,
             ].join(" ")}
         >
             {children}
