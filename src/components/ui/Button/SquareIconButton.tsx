@@ -88,7 +88,7 @@ export default function SquareIconButton({
                     // ignore
                 }
 
-                if (onClick) onClick(e);
+                if (onClick) onClick();
             }}
         >
             {iconEl}
