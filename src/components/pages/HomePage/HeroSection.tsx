@@ -53,7 +53,7 @@ export default function HeroSection() {
             {t("subtitle")}
           </p>
 
-          <div className="flex flex-col sm:flex-row sm:flex-wrap gap-3 sm:justify-center lg:justify-start">
+          <div className="flex flex-col sm:flex-row sm:flex-wrap gap-4 sm:justify-center lg:justify-start">
             <Button
               href="#projects"
               variant="primary"

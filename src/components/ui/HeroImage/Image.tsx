@@ -26,9 +26,10 @@ export default function HeroImage({ image }: Props) {
         <div
           aria-hidden
           className={[
-            "absolute z-0 rounded-[inherit]",
+            "absolute z-0 rounded-2xl",
             "-inset-8 sm:-inset-10 lg:-inset-12 blur-xl lg:blur-2xl",
             "neon-glow-sm animate-neon",
+            "",
           ].join(" ")}
         />
         <Image
@@ -43,7 +44,7 @@ export default function HeroImage({ image }: Props) {
             "(min-width: 768px) 70vw",
             "88vw",
           ].join(", ")}
-          className="relative z-10 object-cover"
+          className="relative z-10 object-cover rounded-2xl"
         />
       </div>
     </div>
