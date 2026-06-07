@@ -29,7 +29,7 @@ export default function HeroSection() {
           "justify-items-center lg:justify-items-stretch"
         ].join(" ")}
       >
-        <HeroImage image="/hero-image.png" />
+        <HeroImage image="/foto_1mb.jpg" />
 
         <div
           className={[
